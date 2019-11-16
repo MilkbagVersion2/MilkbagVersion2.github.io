@@ -1,5 +1,13 @@
 .signInBox{
     display:block;
-    border: 2px solid black;
+    border: 2px solid blue;
+    border-radius: 7px;
     position:center;
+    margin-top:25%;
+    margin-left:43%;
+    width:15%;
+    text-align:center;
+}
+.signInTxt{
+
 }
