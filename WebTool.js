@@ -1,6 +1,5 @@
-function submit(username){
-    if(username == "yeet"){
-        alert("access granted");
-    }
-
+function submit(a){
+	if(a==="yeet"){
+	alert("yeet");
+	}
 }
