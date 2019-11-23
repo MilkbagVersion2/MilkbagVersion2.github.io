@@ -1,10 +1,9 @@
 .signInBox{
     display:inline-block;
-    border-radius-bottom: 7px;
-    position:center;
     margin-top:0px;
     width:15%;
     text-align:center;
+
 }
 .signInTxt{
 font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
