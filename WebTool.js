@@ -1,5 +1,5 @@
-function submit(a){
-	if(a==="yeet"){
+function submit(){
+
 	alert("yeet");
-	}
+
 }
