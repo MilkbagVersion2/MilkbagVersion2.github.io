@@ -30,14 +30,3 @@ if(e.includes(".ca")||e.includes(".com")||e.includes(".au")||e.includes(".org"))
   }
  }
 
-function sendUserInfo() {
-       $.ajax({
-            method: "POST",
-            url: 'database.php',
-            data:{action:'call_this'},
-            success:function(data) {
-              alert(data);
-            }
-
-       });
-  }

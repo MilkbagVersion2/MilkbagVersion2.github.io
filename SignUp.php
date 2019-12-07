@@ -1,63 +1,175 @@
 
 <?php
+
 include_once("database.php");
 ?>
 
 <!DOCTYPE html>
+<style>
+.signInBox{
+}
+.signInTxt{
+font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+.title{
 
+font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+.titleText{
+
+      font-size:45pt;margin:0px;padding:0px;color:black;
+      }
+   .titleTextG{
+
+         font-size:50pt;margin:0px;padding:0px;color:red;
+         }
+.username{
+outline:none;padding:3px;border-radius:10px;height:20px;
+}
+
+div button{
+    display:inline-block;
+}
+.submit {
+    display:inline-block;
+    border-radius:10px;
+    color: white;
+    width:70px;
+    height:35px;
+    background: #4C8FFB;
+    border: 1px #3079ED solid;
+    box-shadow: inset 0 1px 0 #80B0FB;
+}
+
+.submit:hover {
+    border: 1px #2F5BB7 solid;
+    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+    background: #3F83F1;
+}
+
+.submit:active {
+    box-shadow: inset 0 2px 5px #2370FE;
+}
+.y{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+.signInUnity{
+    margin-left:30%;margin-top:45px; padding:0px;
+    margin-bottom:75px;border-radius:100px;
+    background-color:rgba(217, 217, 217,0.7);
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);padding-bottom:65px;width:40%;
+}
+
+.Groupify{
+    font-style:italic;
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;text-align:center;
+}
+body{
+    background-image: url('email-pattern.png'); padding:0px;border-radius:15px;height:85vh;
+}
+.secondaryBody{
+    width:95%;
+    height:100%;
+    margin:0 auto;
+    padding-bottom:50px;
+}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  margin-left:20%;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 50%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+</style>
 <link rel="stylesheet" type="text/css" href="WebTool.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <script src="WebTool.js"></script>
 <title>Groupify</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-<body style="background-color:#D0D0D0;padding:0px;border-radius:15px;">
-<div style="background-color:white;width:95%; height:100%;margin:0 auto;padding-bottom:7px;">
+<body >
+<div class="secondaryBody">
     <div>
 
-        <img src="Groupify.png" alt="yeet" style="margin-left:35%;">
+        <h1 class = "Groupify" >
+                  <span class="titleTextG" >G</span>
+                  <span class="titleTextG" >r</span>
+                  <span class="titleTextG" >o</span>
+                  <span class="titleTextG" >u</span>
+                  <span class="titleTextG" >p</span>
+                  <span class="titleText" >i</span>
+                  <span class="titleText" >f</span>
+                  <span class="titleText" >y</span>
+                </h1>
 
     </div>
-    <div align="center" class="signInUnity" style="margin-left:34%;margin-top:0px; padding:0px;margin-bottom:7px;border-radius:100px;width:35%;
-			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);">
+    <div align="center" class="signInUnity" >
         <div class="SignInTitle" style=" margin:0px; padding:0px; ">
             <h1 style="" class="title">Create Sign In</h1>
         </div>
         <div class="signInBox">
-            <form  name="SignInForm" method="post">
+            <form  name="SignInForm" method="post" enctype="multipart/form-data">
 
 
-                <p class="signInTxt">Username</p>
-                <input class="username" type="text" name="username" id="username1">
-                <p class="signInTxt">Email</p>
-                <input class="username" type="text" name="email" id="email">
+                <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="Username" name="username">
+                  </div>
                 <br>
-                <p class="signInTxt">Password</p>
-                <input class="username" type="password" name="password" id="password1">
+                  <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input class="input-field" type="text" placeholder="Email" name="email">
+                  </div>
+                  <br>
+                  <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="input-field" type="password" placeholder="Password" name="password">
+                  </div>
                 <br>
-                <p class="signInTxt">Confirm Password</p>
-                <input class="username" type="password" name="passwordCon" id="password2">
+                <div class="input-container">
+                     <i class="fa fa-key icon"></i>
+                     <input class="input-field" type="password" placeholder="Confirm password" name="passwordCon">
+                  </div>
+                 <br>
                 <br>
-                <br>
-                <button id = "submit" class="submit" name="create" >Create Account</button>
-
+                <div style="width:185px;">
+                <button style="width:70px;height:35px;margin-bottom:10px;" id = "submit" class="submit" name="create" >Register</button>
+                <button style="width:70px;height:35px;" id = "back" class="submit"  name="back">back</button>
+                </div>
 
             </form >
         </div>
-
     </div>
 </div>
 <p class="signInTxt" style="text-align:center;">Created and Designed by : Josh Wells; Shaun Francis</p>
-<br>
 </body>
 
-<script>
-      $username = document.getElementById('username1');
-      $password = document.getElementById('password1');
-
-      $.ajax{
-        method="get";
-
-      }
-
-</script>
