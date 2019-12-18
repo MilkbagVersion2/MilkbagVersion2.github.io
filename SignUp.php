@@ -162,7 +162,8 @@ body{
                  <br>
                 <br>
                 <div style="width:185px;">
-                <button style="width:70px;height:35px;margin-bottom:10px;" id = "submit" class="submit" name="create" >Register</button>
+                <p style="font-size:12px;color:red;"><?php if(isset($_POST['create']) && $_POST['create'] == ''){ echo $_SESSION['error']; } ?></p>
+                <button style="width:70px;height:35px;margin-bottom:10px;" id = "create" class="submit" name="create" >Register</button>
                 <button style="width:70px;height:35px;" id = "back" class="submit"  name="back">back</button>
                 </div>
 

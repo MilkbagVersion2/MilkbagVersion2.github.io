@@ -65,7 +65,7 @@ div button{
 .signInUnity{
     margin-left:30%;margin-top:45px; padding:0px;
     margin-bottom:100px;border-radius:100px;
-    background-color:rgba(217, 217, 217,0.7);
+    background-color:rgba(217, 217, 217,0.85);
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);padding-bottom:65px;width:40%;
 }
 
@@ -74,7 +74,7 @@ div button{
     font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;text-align:center;
 }
 body{
-    background-image: url('email-pattern.png'); padding:0px;border-radius:15px;height:85vh;
+    background-image: url('memphis-colorful.png'); padding:0px;border-radius:15px;height:85vh;
 }
 .secondaryBody{
     width:95%;
@@ -142,8 +142,7 @@ body{
         </h1>
 </div>
 
-<div align="center" class="signInUnity" style="
-            ">
+<div align="center" class="signInUnity" style="">
 
 
 <div class="SignInTitle" style="margin:0px; padding:0px; ">
@@ -164,8 +163,7 @@ body{
                       </div>
                     <br>
     <br>
-    <p style="font-size:15px;color:red;"><?php $error="";if(isset($_POST['submit']) && $_POST['submit'] == ''){ echo $_SESSION['error']; } ?></p>
-
+    <p style="font-size:15px;color:red;"><?php if(isset($_POST['submit']) && $_POST['submit'] == ''){ echo $_SESSION['error']; } ?></p>
 
     <div style="margin-left:30%;width:200px;display:block;">
         <button  id = "submit" class="submit"  name="submit" >Sign In</button>
@@ -175,10 +173,11 @@ body{
 
 </form>
      <br>
+     <a href="classroom.php">class</a>
 </div>
 
 </div>
 
 </div>
-<p class="signInTxt"  style="text-align:center;">Created and Designed by : Josh Wells; Shaun Francis</p>
+<p class="signInTxt"  style="text-align:center;">Created and Designed by : Josh Wells, and Shaun Francis</p>
 </body>

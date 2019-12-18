@@ -30,3 +30,8 @@ if(e.includes(".ca")||e.includes(".com")||e.includes(".au")||e.includes(".org"))
   }
  }
 
+
+
+<table style="border-collapse:collapse; width:100%; display:inline-block;">
+        <tr style="border:1px solid #dddddd; padding:0px; margin:0px;">
+            <th style ="border:1px solid #dddddd; width:33vw; margin:33%;"

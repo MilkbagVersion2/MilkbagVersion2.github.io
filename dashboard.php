@@ -9,11 +9,11 @@ function closeNav() {
 </script>
 <style>
     .titleText{
-        font-size:45pt;margin:0px;padding:0px;color:black;
+        font-size:30pt;margin:0px;padding:0px;color:black;font-weight:1200;
     }
 
     .titleTextG{
-        font-size:50pt;margin:0px;padding:0px;color:red;
+        font-size:35pt;margin:0px;padding:0px;color:red;font-weight:1200;
     }
 
     .logoText{

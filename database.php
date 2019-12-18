@@ -7,6 +7,7 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
  session_start();
+ $_SESSION['rowcount']=0;
  $servername = "localhost";  //declaring a placeholder for the database server name.
  $username = "milkbag19";    //declaring a placeholder for the database username sign in.
  $password = "yeet";         //declaring a placeholder for the database password sign in.
@@ -17,9 +18,9 @@ require 'PHPMailer/src/SMTP.php';
  if (!$mysqli) {
      die("Connection failed: " . mysqli_connect_error());
  }
-     function upload(){ //function meant to upload data to the database.  Mainly for user creation.
+     function upload(){
+      //function meant to upload data to the database.  Mainly for user creation.
      if (session_status() == PHP_SESSION_ACTIVE) {
-
      }
      else{
      session_start();
@@ -31,7 +32,6 @@ require 'PHPMailer/src/SMTP.php';
      //=====================================================================\\
      //All $_POST variables are grabbing the values from HTML text boxes    \\
      //=====================================================================\\
-
      $emailInput = $_POST['email'];
      $usernameInput = $_POST['username'];
      $passwordInput = $_POST['password'];
@@ -39,10 +39,12 @@ require 'PHPMailer/src/SMTP.php';
       //=====================================================================\\
       //Checking for different sign up info requirements                     \\
       //=====================================================================\\
-      if(strpos($emailInput,"@")&&strpos($emailInput,".")){
+
      if($passwordInput===$passwordConfirm){
 
          if($emailInput!=""&&$usernameInput!=""&&$passwordInput!=""){
+         list($user, $domain) = explode('@', $emailInput);
+               if(filter_var($emailInput, FILTER_VALIDATE_EMAIL)&&checkdnsrr($domain,"MX")){
           //========================================================================\\
           //Attempts to connect to the database with the info given beforehand.    \\
           //It then searches the database for the username inputted in the text box \\
@@ -60,30 +62,36 @@ require 'PHPMailer/src/SMTP.php';
                          $row = $searchresult->fetch_assoc();
              if($row['username']==null){
                  if($row1['email']==null){
+
                          //sending the server the data to be uploaded and where to insert it into the database
                          $upload = "INSERT INTO users (username,password,email) VALUES ('$usernameInput','$passwordInput','$emailInput')";
+
                          if ($mysqli->query($upload) === TRUE) {
                              //echo "New record created successfully";
+
                              header("Location: index.php");
                          } else {
                              //echo "Error: " . $upload . "<br>" . $mysqli->error;
                          }
                          }else{
-                             echo "<script>alert('email already in use');</script>";
+                         $_SESSION['error'] = "email already in use";
                          }
                  }else{
-                     echo "<script>alert('username already in use');</script>";
+                 $_SESSION['error'] = "username already in use";
                  }
          }else{
-             echo "<script>alert('fields must all be entered');</script>";
+         $_SESSION['error'] = "invalid email";
+
          }
      }else{
-         echo "<script>alert('passwords must match');</script>";
+          $_SESSION['error'] = "fields must all be entered";
      }
      }else{
-        echo "<script>alert('invalid email');</script>";
+     $_SESSION['error'] = "passwords must match";
+
      }
-        unset($_POST['create']);
+
+
      }
  function signIn(){
  if (session_status() == PHP_SESSION_ACTIVE) {
@@ -112,15 +120,14 @@ require 'PHPMailer/src/SMTP.php';
              $mysqli = new mysqli($servername, $username, $password, $database);
          $searchresult = $mysqli->query($searchquery);
          $row = $searchresult->fetch_assoc();
-         if($usernameInput === strtolower($row['username'])||$usernameInput === strtolower($row['email'])&&$passwordInput === $row['password']){
-         //send the user to the sign up page once signed in. (placeholder)
+         if($usernameInput === strtolower($row['username'])&&$passwordInput === $row['password']||$usernameInput === strtolower($row['email'])&&$passwordInput === $row['password']){
+
          $_SESSION['user'] = $row;
-         header("Location: Profile.php");
          $_SESSION['error'] = "";
+         header("Location: classroom.php");
          }else{
          $_SESSION['error']="invalid username/password";
           }
-    unset($_POST['submit']);
  }
  function updatePassword(){
  if (session_status() == PHP_SESSION_ACTIVE) {
@@ -182,7 +189,6 @@ require 'PHPMailer/src/SMTP.php';
       }else{
          $_SESSION['error'] = "Passwords don't match";
       }
-    unset($_POST['changePassword']);
  }
  function updateUsername(){
  if (session_status() == PHP_SESSION_ACTIVE) {
@@ -245,7 +251,6 @@ require 'PHPMailer/src/SMTP.php';
       }else{
          $_SESSION['error'] = "username unavailable";
       }
-    unset($_POST['changeUsername']);
  }
 //=====================================================================\\
 //When enter is pressed, or submit is clicked, then either submit      \\
@@ -265,10 +270,8 @@ if(isset($_POST["back"])){
 }
 if(isset($_POST["changeUsername"])){
     updateUsername();
-    unset($_POST["changeUsername"]);
 }
 if(isset($_POST["changePassword"])){
     updatePassword();
-    unset($_POST["changePassword"]);
 }
 ?>

@@ -63,16 +63,17 @@ div button{
 .signInUnity{
     margin-left:22%;margin-top:45px; padding:0px;
     margin-bottom:100px;border-radius:100px;
-    background-color:rgba(217, 217, 217,0.7);
+    background-color:rgba(217, 217, 217,0.85);
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);padding-bottom:65px;width:60%;
 }
 
 .Groupify{
     font-style:italic;
+
     font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;text-align:center;
 }
 body{
-    background-image: url('email-pattern.png'); padding:0px;border-radius:15px;height:200vh;
+    background-image: url('memphis-colorful.png'); padding:0px;border-radius:15px;height:vmin;
 }
 .secondaryBody{
     width:95%;
