@@ -64,7 +64,25 @@ function closeNav() {
       .sidenav {padding-top: 15px;}
       .sidenav a {font-size: 18px;}
     }
+.submit {
+    display:inline-block;
+    color: white;
+    width:70px;
+    height:35px;
+    background: #4C8FFB;
+    border: 1px #3079ED solid;
+    box-shadow: inset 0 1px 0 #80B0FB;
+}
 
+.submit:hover {
+    border: 1px #2F5BB7 solid;
+    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+    background: #3F83F1;
+}
+
+.submit:active {
+    box-shadow: inset 0 2px 5px #2370FE;
+}
 
 </style>
 
@@ -98,19 +116,30 @@ function closeNav() {
         </div>
 </body>
 
-<div style="margin-top: 30px; display:inline-block; float:left;">
+<div style="margin-top: 0px; display:inline-block; float:left;">
+ <table style="border-collapse:collapse; width:100%">
+ <?php
+ if(isset($_POST['n'])&&$_POST['n'] == ''){
+             $_SESSION['rowcount'] = 0;
+             unset($_SESSION['n']);
+         }
+  for($j=0;$j<$_SESSION['rowcount'];$j++){echo"<tr style='border:1px solid #dddddd; padding:0px; margin:0px;'><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'><input placeholder='forloop'></input></th><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'>ghd</th></tr>";}?>
 <form id ="yeet" name="SignInForm" method="post" enctype="multipart/form-data">
-    <table style="border-collapse:collapse; width:100%">
 
-        <?php if(isset($_POST['y']) && $_POST['y'] == ''){$_SESSION['rowcount']++;echo $_SESSION['rowcount']; for($i=0;$i<$_SESSION['rowcount'];$i++){echo"<tr style='border:1px solid #dddddd; padding:0px; margin:0px;'><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'>foo</th><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'>ghd</th></tr>";
 
-        }
-        }
-unset($_POST['y']);
-        ?>
+        <?php
+        echo "<tr style='border:1px solid #dddddd; padding:0px; margin:0px;'><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'><button style='height:10vh; width:33vw;' id = 'y' class='submit' name = 'y'>ADD</button></th></tr>";
 
+        if(isset($_POST['y']) && $_POST['y'] == ''){
+            $_SESSION['rowcount']++;
+            echo"<script>window.location.href = 'classroom.php';</script>";
+        }?>
+
+            <button id = "n" class="submit" name = "n" >Reset</button>
+</form>
     </table>
-    <button  id = "y" class="submit"  name="y" >Add</button>
-    </form>
+
+
+
 </div>
 </html>

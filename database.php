@@ -7,7 +7,7 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
  session_start();
- $_SESSION['rowcount']=0;
+ $_SESSION['rowcount'];
  $servername = "localhost";  //declaring a placeholder for the database server name.
  $username = "milkbag19";    //declaring a placeholder for the database username sign in.
  $password = "yeet";         //declaring a placeholder for the database password sign in.

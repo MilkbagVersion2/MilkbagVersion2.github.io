@@ -89,6 +89,7 @@ function closeNav() {
                 <span class="titleText" >y</span>
             </h1>
         </div>
+
             <span style="font-size:30px;cursor:pointer; display:inline-block; float:right; margin-top:40px; margin-right:20px;" onclick="openNav()">My Account▼</span>
         </div>
 </body>
