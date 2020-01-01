@@ -101,6 +101,7 @@ function closeNav() {
     <div style="display:inline-block; width:100%; height:15%; padding:0%; margin:0%; background-color:lightGrey;">
 
         <div class="logoText" style="float:left; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;" >
+        <a href="dashboard.php" style="text-decoration: none;">
             <h1 class = "Groupify" style="margin-left:3px">
                 <span class="titleTextG" >G</span>
                 <span class="titleTextG" >r</span>
@@ -111,6 +112,7 @@ function closeNav() {
                 <span class="titleText" >f</span>
                 <span class="titleText" >y</span>
             </h1>
+            </a>
         </div>
             <span style="font-size:30px;cursor:pointer; display:inline-block; float:right; margin-top:40px; margin-right:20px;" onclick="openNav()">My Account▼</span>
         </div>

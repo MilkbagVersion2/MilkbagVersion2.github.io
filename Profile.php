@@ -136,18 +136,18 @@ body{
 <body >
 <div class="secondaryBody">
 <div>
-
-    <h1 class = "Groupify" >
-          <span class="titleTextG" >G</span>
-          <span class="titleTextG" >r</span>
-          <span class="titleTextG" >o</span>
-          <span class="titleTextG" >u</span>
-          <span class="titleTextG" >p</span>
-          <span class="titleText" >i</span>
-          <span class="titleText" >f</span>
-          <span class="titleText" >y</span>
-
-        </h1>
+        <a href="dashboard.php" style="text-decoration: none;">
+            <h1 class = "Groupify" >
+                <span class="titleTextG" >G</span>
+                <span class="titleTextG" >r</span>
+                <span class="titleTextG" >o</span>
+                <span class="titleTextG" >u</span>
+                <span class="titleTextG" >p</span>
+                <span class="titleText" >i</span>
+                <span class="titleText" >f</span>
+                <span class="titleText" >y</span>
+            </h1>
+        </a>
 </div>
 
 <div align="center" class="signInUnity" >
