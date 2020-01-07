@@ -299,7 +299,7 @@ require 'PHPMailer/src/SMTP.php';
       $stmt->execute();
       $result = $stmt->get_result();
       while($row = $result->fetch_object()) {
-          echo "<button style='height:22vh; width:22vw;margin:10px;' id = 'class' class='submit' name = 'class' href='classroom.php'>$row->ClassName</button>";
+          echo "<div style='height:22vh; width:22vw;margin:10px;text-align:center;' class='submit'><button style='display:block;box-shadow: none;border:none;' class='submit'>X</button><button id = 'class'  style='height:14vh; width:22vw; border:none;box-shadow: none;'  class='submit' name = 'class' href='classroom.php'>$row->ClassName</button></div>";
       }
  }
 //=====================================================================\\

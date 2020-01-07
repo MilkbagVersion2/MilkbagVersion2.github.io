@@ -105,7 +105,7 @@ button{
 
          <div class="logoText" style="float:left; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;" >
                 <a href="dashboard.php" style="text-decoration: none;">
-                    <h1 class = "Groupify" style="margin-left:3px">
+                    <h1 class = "Groupify" style="margin-left:20px">
                         <span class="titleTextG" >G</span>
                         <span class="titleTextG" >r</span>
                         <span class="titleTextG" >o</span>
