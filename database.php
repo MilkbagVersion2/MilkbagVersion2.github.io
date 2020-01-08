@@ -130,6 +130,17 @@ require 'PHPMailer/src/SMTP.php';
          $_SESSION['error']="invalid username/password";
           }
  }
+ /*
+ //==============================================================\\
+ //Logs the user out of their account. This is done by ending    \\
+ //The session they are currently using (ustalizing data from)   \\
+ //The database                                                  \\
+ <?php
+  session_start();
+  session_destroy();
+ ?>
+ */
+
  function updatePassword(){
  if (session_status() == PHP_SESSION_ACTIVE) {
 

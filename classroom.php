@@ -95,6 +95,7 @@ function closeNav() {
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="Profile.php">PROFILE OPTIONS</a>
+    <a href="SignUp.php">LOG OUT</a>
 </div>
 
 <body style="background-image: url('memphis-colorful.png'); padding: 0px; border-radius:0px; padding:0px; margin:0px;">
