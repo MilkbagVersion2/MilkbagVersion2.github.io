@@ -165,17 +165,18 @@ body{
                       </div>
                     <br>
     <br>
+    <?php
+        echo $_SESSION['user']['userId'];
+    ?>
     <p style="font-size:15px;color:red;"><?php if(isset($_POST['submit']) && $_POST['submit'] == ''){ echo $_SESSION['error']; } ?></p>
 
     <div style="margin-left:30%;width:200px;display:block;">
-        <button  id = "submit" class="submit"  name="submit" >Sign In</button>
-        <p style="font-size:10px;margin:0px;padding:0px;">Dont have a Groupify account? </p>
-        <a style="color:blue;font-size:10px;margin:0px;padding:0px;" href="SignUp.php">Make one.</a>
+        <button  id = "submit" class="submit"  name="submit" >Sign In</button><br>
+        <a style="color:blue;font-size:10px;margin:0px;padding:0px;" href="SignUp.php">Dont have a Groupify account?</a>
     </div>
 
 </form>
-     <br>
-     <a href="classroom.php">class</a>
+
 </div>
 
 </div>

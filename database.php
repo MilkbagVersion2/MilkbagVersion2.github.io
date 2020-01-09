@@ -340,15 +340,14 @@ function classJoin(){
       $mysqli = new mysqli($servername, $username, $password, $database);
       $userId1 = $_SESSION['user']['userId'];
       //code below was sourced via helpful user, on the internet. He also described that our table could be modified by users (which isn't good) and the suggested code fix below would fix it.
-      $sql = "SELECT ClassName FROM classroom WHERE userid = ?";
+      $sql = "SELECT * FROM classroom WHERE userid = ?";
       $stmt = $mysqli->prepare($sql);
       $stmt->bind_param('s', $userId1);
       $stmt->execute();
       $result = $stmt->get_result();
       while($row = $result->fetch_object()) {
-          echo "<div style='height:22vh; width:22vw;margin:10px;text-align:center;' class='submit1'>
-                    <button style='display:block;box-shadow: none;border:none;' class='submit1' id='$row->ClassName' name='$row->ClassName'>X</button>
-                        <button id = 'class'  style='height:18vh; width:22vw; border:none;box-shadow: none;'  class='submit1' name = 'class' href='classroom.php'>$row->ClassName</button>
+          echo "<div style='height:22vh; width:22vw;margin:10px;text-align:center;display:inline-block;background-color:white;border-radius:5px;border: 1px solid gray;' class='classBox'>
+                        <button id='class' style='height:11vh; width:22vw; border:none;box-shadow: none;'  class='submit1' name = 'class' href='classroom.php'>$row->ClassName<br> [$row->classCode]</button>
                  </div>";
       }
  }

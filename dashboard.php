@@ -47,10 +47,11 @@ function closeJoin() {
     .sidenav a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
-      font-size: 25px;
+      font-size: 35px;
       color: #818181;
       display: block;
       transition: 0.3s;
+      font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     }
 
     .sidenav a:hover {
@@ -126,7 +127,8 @@ function closeJoin() {
 }
 .submit1 {
     display:inline-block;
-    border-radius:10px;
+    border-radius:5px;
+    font-size:30px;
     color: white;
     width:70px;
     height:35px;
@@ -145,6 +147,26 @@ function closeJoin() {
 button{
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
+
+.classBox:hover{
+    cursor:pointer;
+    box-shadow: 1px 1px 1px  rgba(0,0,0,0.6);
+}
+.logout{
+      padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 35px;
+            margin-top:25vh;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            background-color:#111;
+            border:none;
+            float:right;
+}
+.logout:hover{
+color: #f1f1f1;
+}
 </style>
 
 <html lang="en">
@@ -156,7 +178,16 @@ button{
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="Profile.php">PROFILE OPTIONS</a>
-    <a href="SignUp.php">LOG OUT</a> //CHECK WITH JOSH
+
+    <form id ="lol" name="SignInForm" method="post" enctype="multipart/form-data">
+    <button name="logout" id="logout" class="logout">LOG OUT</button>
+    <?php
+        if(isset($_POST['logout'])){
+            $_SESSION['user']=null;
+            echo"<script>window.location.href = 'index.php';</script>";
+        }
+    ?>
+    </form>
 </div>
 <div style="-webkit-animation:Background 5s infinite alternate; border-radius:50px;margin-top:-50px;margin-bottom:50px;height:0;width:600px; position: fixed;z-index: 1;top: 0;left: 27%;background-color: #111;overflow-x: hidden;transition: 0.5s;padding-left: 60px;text-align:right;overflow: hidden;" id="joinbtn" class="joinMenu">
 <a href="javascript:void(0)" class="closebtn" onclick="closeJoin()"style="margin-top:7%;">&times;</a>

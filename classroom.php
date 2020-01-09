@@ -26,39 +26,40 @@ function closeNav() {
     }
 
     .sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-     text-align:right;
-    }
+          height: 100%;
+          width: 0;
+          position: fixed;
+               z-index: 1;
+               top: 0;
+               right: 0;
+               background-color: #111;
+               overflow-x: hidden;
+               transition: 0.5s;
+               padding-top: 60px;
+              text-align:right;
+        }
 
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 35px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+          font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        }
 
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
 
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
 
     @media screen and (max-height: 450px) {
       .sidenav {padding-top: 15px;}
@@ -83,7 +84,24 @@ function closeNav() {
 .submit:active {
     box-shadow: inset 0 2px 5px #2370FE;
 }
-
+.logout{
+      padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 35px;
+            margin-top:25vh;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            background-color:#111;
+            border:none;
+            float:right;
+}
+.logout:hover{
+color: #f1f1f1;
+}
+button{
+font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
 </style>
 
 <html lang="en">
@@ -95,7 +113,16 @@ function closeNav() {
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="Profile.php">PROFILE OPTIONS</a>
-    <a href="SignUp.php">LOG OUT</a>
+
+    <form id ="lol" name="SignInForm" method="post" enctype="multipart/form-data">
+    <button name="logout" id="logout" class="logout">LOG OUT</button>
+    <?php
+        if(isset($_POST['logout'])){
+            $_SESSION['user']=null;
+            echo"<script>window.location.href = 'index.php';</script>";
+        }
+    ?>
+    </form>
 </div>
 
 <body style="background-image: url('memphis-colorful.png'); padding: 0px; border-radius:0px; padding:0px; margin:0px;">
