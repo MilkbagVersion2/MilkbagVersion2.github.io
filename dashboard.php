@@ -176,8 +176,16 @@ color: #f1f1f1;
 </head>
 
 <div id="mySidenav" class="sidenav">
+    <?php
+
+    ?>
+
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="Profile.php">PROFILE OPTIONS</a>
+    <?php
+        $username = $_SESSION['user']['username'];
+        echo"<a href='Profile.php'>$username</a>";
+        $_SESSION['currentClass']=null;
+    ?>
 
     <form id ="lol" name="SignInForm" method="post" enctype="multipart/form-data">
     <button name="logout" id="logout" class="logout">LOG OUT</button>
@@ -254,12 +262,12 @@ color: #f1f1f1;
              unset($_POST['n']);
              echo"<script>window.location.href = 'dashboard.php';</script>";
          }
-         if(isset($_POST['class']) && $_POST['class'] == ''){
+         if(isset($_POST['class']) && $_POST['class'] != ''){
+                     $_SESSION['currentClass'] = $_POST['class'];
                      echo"<script>window.location.href = 'classroom.php';</script>";
-                     unset($_SESSION['n']);
+                     unset($_SESSION['class']);
                  }?>
         <?php
-
         if(isset($_POST['y']) && $_POST['y'] == ''){
             addClassroom();
             echo"<script>window.location.href = 'dashboard.php';</script>";

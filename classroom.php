@@ -129,7 +129,7 @@ font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleG
     <div style="display:inline-block; width:100%; height:15%; padding:0%; margin:0%; background-color:lightGrey;">
 
         <div class="logoText" style="float:left; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;" >
-        <a href="dashboard.php" style="text-decoration: none;">
+        <a href="dashboard.php" name="return" style="text-decoration: none;">
             <h1 class = "Groupify" style="margin-left:3px">
                 <span class="titleTextG" >G</span>
                 <span class="titleTextG" >r</span>
@@ -145,7 +145,6 @@ font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleG
             <span style="font-size:30px;cursor:pointer; display:inline-block; float:right; margin-top:40px; margin-right:20px;" onclick="openNav()">My Account▼</span>
         </div>
 </body>
-
 <div style="margin-top: 0px; display:inline-block; float:left;">
  <table style="border-collapse:collapse; width:100%">
  <?php
@@ -153,15 +152,16 @@ font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleG
              $_SESSION['rowcount'] = 0;
              unset($_SESSION['n']);
          }
-  for($j=0;$j<$_SESSION['rowcount'];$j++){echo"<tr style='border:1px solid #dddddd; padding:0px; margin:0px;'><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'><input placeholder='forloop'></input></th><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'>ghd</th></tr>";}?>
-<form id ="yeet" name="SignInForm" method="post" enctype="multipart/form-data">
+         loadTasks();
+         ?>
+  <form id ="yeet" name="SignInForm" method="post" enctype="multipart/form-data">
 
 
         <?php
-        echo "<tr style='border:1px solid #dddddd; padding:0px; margin:0px;'><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'><button style='height:10vh; width:33vw;' id = 'y' class='submit' name = 'y'>ADD</button></th></tr>";
+        echo "<tr style='border:1px solid #dddddd; padding:0px; margin:0px;'><th><input name='taskName' style='width:100px;height:50px;' type='text'></th><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'><button style='height:10vh; width:33vw;' id = 'y' class='submit' name = 'y'>ADD</button></th></tr>";
 
         if(isset($_POST['y']) && $_POST['y'] == ''){
-            $_SESSION['rowcount']++;
+            addTasks();
             echo"<script>window.location.href = 'classroom.php';</script>";
         }?>
 

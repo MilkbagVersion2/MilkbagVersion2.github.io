@@ -347,10 +347,77 @@ function classJoin(){
       $result = $stmt->get_result();
       while($row = $result->fetch_object()) {
           echo "<div style='height:22vh; width:22vw;margin:10px;text-align:center;display:inline-block;background-color:white;border-radius:5px;border: 1px solid gray;' class='classBox'>
-                        <button id='class' style='height:11vh; width:22vw; border:none;box-shadow: none;'  class='submit1' name = 'class' href='classroom.php'>$row->ClassName<br> [$row->classCode]</button>
+                        <button id='class' style='height:11vh; width:22vw; border:none;box-shadow: none;'  class='submit1' name = 'class' value='$row->classCode' >$row->ClassName<br> [$row->classCode]</button>
                  </div>";
       }
  }
+ function addTasks(){
+   //function meant to upload data to the database.  Mainly for user creation.
+       if (session_status() == PHP_SESSION_ACTIVE) {
+       }
+       else{
+       session_start();
+       }
+       $servername = "localhost";
+       $username = "milkbag19";
+       $password = "yeet";
+       $taskName = $_POST['taskName'];
+       $database = "userinfo";
+       $idUser = $_SESSION['user']['userId'];
+       $classCode=$_SESSION['currentClass'];
+
+       $mysqli = new mysqli($servername, $username, $password, $database);
+
+
+               $upload = "INSERT INTO tasks (taskName,userId,classCode) VALUES ('$taskName','$idUser','$classCode')";
+               $stmt = $mysqli->prepare($upload);
+               $stmt->execute();
+               $result = $stmt->get_result();
+
+
+
+
+
+  }
+function loadTasks(){
+    $servername = "localhost";
+           $username = "milkbag19";
+           $password = "yeet";
+           $database = "userinfo";
+          $mysqli = new mysqli($servername, $username, $password, $database);
+          $classCode = $_SESSION['currentClass'];
+          //code below was sourced via helpful user, on the internet. He also described that our table could be modified by users (which isn't good) and the suggested code fix below would fix it.
+          $sql = "SELECT * FROM tasks WHERE classCode = ?";
+          $stmt = $mysqli->prepare($sql);
+          $stmt->bind_param('s', $classCode);
+          $stmt->execute();
+          $result = $stmt->get_result();
+
+
+
+
+          while($row = $result->fetch_object()) {
+          $search = "SELECT * FROM users WHERE userId = ?";
+                              $stmt1 = $mysqli->prepare($search);
+                              $stmt1->bind_param('s', $row->userId);
+                              $stmt1->execute();
+                              $results = $stmt1->get_result();
+                              $user = $results->fetch_object();
+            echo"<tr style='border:1px solid #dddddd; padding:0px; margin:0px;'><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'>$row->taskName</th><th style='border:1px solid #dddddd; height:10vh; width:33vw; margin:33%;'>$user->username</th><th><input type='date' name='bday' value='2020-11-27'></th></tr>";
+
+          }
+
+ }
+ function checkSession(){
+             if (session_status() == PHP_SESSION_ACTIVE) {
+                    }
+                    else{
+                    session_start();
+                    }
+             if($_SESSION['user']!=null){
+                 echo"<script>window.location.href = 'dashboard.php';</script>";
+             }
+           }
 //=====================================================================\\
 //When enter is pressed, or submit is clicked, then either submit      \\
 //or create is set, and this is checked via post method.               \\
