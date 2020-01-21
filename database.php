@@ -277,6 +277,7 @@ require 'PHPMailer/src/SMTP.php';
       if($className ===''){
       }else{
               $upload = "INSERT INTO class (ClassName,userid,classCode,Teacher) VALUES ('$className','$idUser','$classCode',1)";
+
               if ($mysqli->query($upload) === TRUE) {
                 echo"<script>window.location.href='dashboard.php';</script>";
               }
@@ -312,13 +313,15 @@ checkSession();
     $userId1 = $_SESSION['user']['userId'];
     $classCode = $_POST['codeInput'];
     $className = $_POST['className'];
+    $Teacher = 1;
     $codeSearch = "SELECT * FROM class WHERE `classCode` LIKE '%{$classCode}%'";
+
     $searchresult = $mysqli->query($codeSearch);
     $row = $searchresult->fetch_assoc();
 
     $className = $row['ClassName'];
     if($row['classCode']==$classCode){
-         $upload = "INSERT INTO classroom (ClassName,userid,classCode,Teacher) VALUES ('$className','$userId1','$classCode',0)";
+         $upload = "INSERT INTO class(ClassName,userid,classCode,Teacher) VALUES ('$className','$userId1','$classCode',0)";
               if ($mysqli->query($upload) === TRUE) {
 
                             }
@@ -334,13 +337,35 @@ checkSession();
        $database = "userinfo";
       $mysqli = new mysqli($servername, $username, $password, $database);
       $userId1 = $_SESSION['user']['userId'];
+
+
+
+
       //code below was sourced via helpful user, on the internet. He also described that our table could be modified by users (which isn't good) and the suggested code fix below would fix it.
       $sql = "SELECT * FROM class WHERE userid = ?";
       $stmt = $mysqli->prepare($sql);
       $stmt->bind_param('s', $userId1);
       $stmt->execute();
       $result = $stmt->get_result();
+
+
       while($row = $result->fetch_object()) {
+
+/*
+      $teacher = 1;
+      $classcode=$row->classCode;
+      $TeacherSearch = "SELECT * FROM class WHERE `classCode` LIKE '%{$classcode}%' AND `Teacher` LIKE '1'";
+            $stmt = $mysqli->prepare($TeacherSearch);
+            $stmt->execute();
+            $TeacherRow= $result->fetch_object();
+            $LOL = $TeacherRow->userid;
+            echo"$LOL";
+             $sqls = "SELECT * FROM users WHERE `userId` = '$LOL'";
+                  $stmt = $mysqli->prepare($sqls);
+                  $stmt->execute();
+                  $results = $stmt->get_result();
+                  $TeacherName= $results->fetch_object();
+*/
           echo "<div style='height:22vh; width:22vw;margin:10px;text-align:center;display:inline-block;background-color:white;border-radius:5px;border: 1px solid gray;' class='classBox'>
                         <button id='class' style='height:11vh; width:22vw; border:none;box-shadow: none;'  class='submit1' name = 'class' value='$row->classCode' >$row->ClassName<br> [$row->classCode]</button>
                  </div>";
@@ -361,7 +386,7 @@ checkSession();
        $mysqli = new mysqli($servername, $username, $password, $database);
 
 
-               $upload = "INSERT INTO tasks (taskName,userId,classCode,stus) VALUES ('$taskName','$idUser','$classCode','$stus')";
+               $upload = "INSERT INTO updatedtasks (taskName,userId,classCode,stus) VALUES ('$taskName','$idUser','$classCode','$stus')";
                $stmt = $mysqli->prepare($upload);
                $stmt->execute();
                $result = $stmt->get_result();
@@ -380,7 +405,7 @@ checkSession();
           $mysqli = new mysqli($servername, $username, $password, $database);
           $classCode = $_SESSION['currentClass'];
           //code below was sourced via helpful user, on the internet. He also described that our table could be modified by users (which isn't good) and the suggested code fix below would fix it.
-          $sql = "SELECT * FROM tasks WHERE classCode = ?";
+          $sql = "SELECT * FROM updatedtasks WHERE classCode = ?";
           $stmt = $mysqli->prepare($sql);
           $stmt->bind_param('s', $classCode);
           $stmt->execute();
@@ -391,19 +416,38 @@ checkSession();
 
           while($row = $result->fetch_object()) {
           $search = "SELECT * FROM users WHERE userId = ?";
+          $userId = $row->userid;
                               $stmt1 = $mysqli->prepare($search);
-                              $stmt1->bind_param('s', $row->userId);
+                              $stmt1->bind_param('s',$userId );
                               $stmt1->execute();
                               $results = $stmt1->get_result();
                               $user = $results->fetch_object();
+                              if(isset($_POST['finished'])){
+                                     $value = $_POST['finished'];
+                                        $updateQuery = "UPDATE updatedtasks SET `stus` = '$value' WHERE `userId` = '$userId'";
+                                        $stmt1 = $mysqli->prepare($updateQuery);
+                                                                      $stmt1->execute();
+                                                                      echo"<script>window.location.href='classroom.php'</script>";
+                                     }
+                                     else if(isset($_POST['working'])){
+                                      $value = $_POST['working'];
+                                      $updateQuery = "UPDATE updatedtasks SET `stus` = '$value' WHERE `userId` = '$userId'";
+                                      $stmt1 = $mysqli->prepare($updateQuery);
+                                      $stmt1->execute();
+                                        echo"<script>window.location.href='classroom.php'</script>";
+                                     }
             echo"<tr style='background-color:white;border-radius:10px;border:0px solid #dddddd;  '><th style='border:0px solid #dddddd; height:2vh; width:33vw; '><div style='height:2vh;width:20px;background-color:red;display:block;'>  </div>$row->taskName</th><th style='border:1px solid #dddddd; height:2vh; width:33vw; '>$user->username</th><th><input type='date' name='due' value='2020-11-27'><div class='dropdown'><button class='dropbtn' id='statusMenu'>$row->stus</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class='dropdown-content'>
-                                                                                                                                                                                                                                                                                                                                                                                                                                   <button value='Finished'>Finished</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                   <button value='Working'>Working</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                                                                                                                                             </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                        </th></tr>
-            </th></tr>";
+                                                                                                                                                                                                                                                                                                                                                                                                                                              <div class='dropdown-content'>
+                                                                                                                                                                                                                                                                                                                                                                                                                                              <form id ='lol' name='SignInForm' method='post' enctype='multipart/form-data'>
+                                                                                                                                                                                                                                                                                                                                                                                                                                               <button name = 'finished' value='Finished'>Finished</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                               <button name = 'working' value='Working'>Working</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                               </form>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                         </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </th></tr>
+                        ";
+
 
           }
 

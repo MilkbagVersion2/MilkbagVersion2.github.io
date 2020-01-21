@@ -101,6 +101,7 @@
        }
        button{
        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+       }
 
        .dropbtn {
          background-color: #4CAF50;
@@ -218,7 +219,9 @@
                    <button id = "n" class="submit" name = "n" >Reset</button>
        </form>
            </table>
+<?php
 
+          ?>                                                                                                                                                                                                                                                                                                                                                                                                                                     ?>
 
 
        </div>
