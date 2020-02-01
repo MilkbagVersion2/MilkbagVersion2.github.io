@@ -6,6 +6,11 @@ checkSignin();
 
 
 <!DOCTYPE html>
+<div style= "height:0.5vh;width:100%;background-color:lightgray;">
+<div style= "height:0.5vh;width:200%;background-color:red;animation: 2s slidein;float:right;">
+
+</div>
+</div>
 <head>
 <link rel="stylesheet" type="text/css" href="WebTool.css">
 <script src="WebTool.js"></script>
@@ -21,16 +26,16 @@ padding-left:0px;
 font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 .title{
-
+font-size:35px;
 font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 .titleText{
 
-      font-size:45pt;margin:0px;padding:0px;color:black;
+      font-size:45pt;margin:0px;padding:0px;color:orange;-webkit-text-stroke: 1px black;
       }
    .titleTextG{
 
-         font-size:50pt;margin:0px;padding:0px;color:red;
+         font-size:50pt;margin:0px;padding:0px;color:orange; -webkit-text-stroke: 1px black;
          }
 .username{
 outline:none;padding:3px;border-radius:10px;height:20px;
@@ -42,16 +47,14 @@ div button{
 .submit {
     display:inline-block;
     border-radius:10px;
-    color: white;
+    color: gray;
     width:70px;
     height:35px;
     background: #4C8FFB;
-    border: 1px #3079ED solid;
-    box-shadow: inset 0 1px 0 #80B0FB;
+    border: none;
 }
 
 .submit:hover {
-    border: 1px #2F5BB7 solid;
     box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
     background: #3F83F1;
 }
@@ -66,8 +69,8 @@ div button{
 .signInUnity{
     margin-left:30%;margin-top:45px; padding:0px;
     margin-bottom:100px;border-radius:100px;
-    background-color:rgba(217, 217, 217,0.85);
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);padding-bottom:65px;width:40%;
+    background-color:rgba(44,47,51,0.75);
+	box-shadow: 0px 0px 5px gray;padding-bottom:65px;width:40%;
 }
 
 .Groupify{
@@ -75,7 +78,8 @@ div button{
     font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;text-align:center;
 }
 body{
-    background-image: url('memphis-colorful.png'); padding:0px;border-radius:15px;height:85vh;
+     padding:0px;border-radius:15px;height:85vh;margin:0px;
+    animation: bgcolor 10s infinite;
 }
 .secondaryBody{
     width:95%;
@@ -103,11 +107,14 @@ body{
  .input-field {
    width: 50%;
    padding: 10px;
+   animation: bgcolor 10s infinite;
+   text-color:white;
    outline: none;
  }
 
  .input-field:focus {
    border: 2px solid dodgerblue;
+
  }
  .btn {
    background-color: dodgerblue;
@@ -119,7 +126,52 @@ body{
    opacity: 0.9;
  }
  *:focus {outline:none}
+@keyframes bgcolor {
+    0% {
+        background-color: #45a3e5
+    }
 
+    30% {
+        background-color: #66bf39
+    }
+
+    60% {
+        background-color: #eb670f
+    }
+
+    90% {
+        background-color: #f35
+    }
+
+    100% {
+        background-color: #864cbf
+    }
+}
+@keyframes txtcolor {
+    0% {
+        color: #45a3e5
+    }
+
+    30% {
+        color: #66bf39
+    }
+
+    60% {
+        color: #eb670f
+    }
+
+    90% {
+        color: #f35
+    }
+
+    100% {
+        color: #864cbf
+    }
+}
+@keyframes slidein {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
 </style>
 </head>
 
@@ -129,8 +181,10 @@ body{
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body >
+
 <div class="secondaryBody">
-<div>
+
+<div style="">
 
     <h1 class = "Groupify" >
           <span class="titleTextG" >G</span>
@@ -141,28 +195,30 @@ body{
           <span class="titleText" >i</span>
           <span class="titleText" >f</span>
           <span class="titleText" >y</span>
+        <div class="Groupify" style="height:1vh;width:16vw;background-color:orange;margin-left:37%;"></div>
+        <div class="Groupify" style="height:0.5vh;width:16vw;background-color:white;margin-left:37%;"></div>
 
         </h1>
-</div>
+        </div>
 
 <div align="center" class="signInUnity" style="">
 
 
 <div class="SignInTitle" style="margin:0px; padding:0px; ">
-    <h1 style="" class="title">Sign In</h1>
+    <h1 style="animation: txtcolor 10s infinite;" class="title">Sign In</h1>
 </div>
 <div class="signInBox">
 <form id ="yeet" name="SignInForm" method="post" enctype="multipart/form-data">
 
 <br>
     <div class="input-container">
-                        <i class="fa fa-user icon"></i>
-                        <input class="input-field" type="text" placeholder="Username" name="username">
+                        <i class="fa fa-user icon" style="border-radius: 15px 0px 0px 15px;"></i>
+                        <input style="border-radius: 0px 15px 15px 0px;border:none;height:5vh;"class="input-field" type="text" placeholder="Username" name="username">
                       </div>
                     <br>
                       <div class="input-container">
-                        <i class="fa fa-key icon"></i>
-                        <input class="input-field" type="password" placeholder="Password" name="password">
+                        <i class="fa fa-key icon"style="border-radius: 15px 0px 0px 15px;"></i>
+                        <input style="border-radius: 0px 15px 15px 0px;border:none;height:5vh;"class="input-field" type="password" placeholder="Password" name="password">
                       </div>
                     <br>
     <br>
@@ -174,8 +230,8 @@ body{
     <p style="font-size:15px;color:red;"><?php if(isset($_POST['submit']) && $_POST['submit'] == ''){ echo $_SESSION['error']; } ?></p>
 
     <div style="margin-left:30%;width:200px;display:block;">
-        <button  id = "submit" class="submit"  name="submit" >Sign In</button><br>
-        <a style="color:blue;font-size:10px;margin:0px;padding:0px;" href="SignUp.php">Dont have a Groupify account?</a>
+        <button  id = "submit" class="submit"  name="submit" style="animation: bgcolor 10s infinite;">Sign In</button><br>
+        <a style="color:rgba(114,137,218,1);font-size:15px;margin:0px;padding:0px;" href="SignUp.php">Dont have a Groupify account?</a>
     </div>
 
 </form>

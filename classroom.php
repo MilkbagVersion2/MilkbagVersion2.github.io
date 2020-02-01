@@ -143,8 +143,16 @@
 
        /* Change the background color of the dropdown button when the dropdown content is shown */
        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+       @keyframes slidein {
+         from { transform: scaleX(0); }
+         to   { transform: scaleX(1); }
+       }
        </style>
+<div style= "height:0.5vh;width:100%;background-color:lightgray;">
+<div style= "height:0.5vh;width:200%;background-color:red;animation: 2s slidein;float:right;">
 
+</div>
+</div>
        <html lang="en">
        <head>
            <meta charset="UTF-8">

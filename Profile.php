@@ -13,7 +13,6 @@ include_once('database.php');
 <style>
 .signInBox{
 width:50vw;
-margin-left:7vw;
 }
 .signInTxt{
 font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;

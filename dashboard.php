@@ -22,11 +22,11 @@ function openCreate(){
 </script>
 <style>
     .titleText{
-        font-size:30pt;margin:0px;padding:0px;color:black;font-weight:1200;
+        font-size:45pt;margin:0px;padding:0px;animation: txtcolor 10s infinite;font-weight:1200;
     }
 
     .titleTextG{
-        font-size:35pt;margin:0px;padding:0px;color:red;font-weight:1200;
+        font-size:45pt;margin:0px;padding:0px;animation: txtcolor 10s infinite;font-weight:1200;
     }
 
     .logoText{
@@ -173,6 +173,28 @@ color: #f1f1f1;
 @keyframes slidein {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
+
+}
+@keyframes txtcolor {
+    0% {
+        color: red;
+    }
+
+    30% {
+        color: green;
+    }
+
+    60% {
+        color: blue;
+    }
+
+    90% {
+        color: black;
+    }
+
+    100% {
+        color: purple;
+    }
 }
 </style>
 
@@ -181,8 +203,8 @@ color: #f1f1f1;
     <meta charset="UTF-8">
     <title>DASHBOARD</title>
 </head>
-<div style= "height:2vh;width:100%;background-color:lightgray;">
-<div style= "height:2vh;width:200%;background-color:darkgray;animation: 2s slidein;float:right;">
+<div style= "height:0.5vh;width:100%;background-color:lightgray;">
+<div style= "height:0.5vh;width:200%;background-color:red;animation: 2s slidein;float:right;">
 
 </div>
 </div>
