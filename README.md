@@ -10,7 +10,7 @@ Front end for our collaborative web tool
 
 # Sign in using in the page above if account is already created.
 - If you have not already created an account, click the link below the sign in button and input needed information in the page below.
-
+- The email used must not have an account linked to it already. 
 ![Image description](signup.PNG)
 
 
