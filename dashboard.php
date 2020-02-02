@@ -177,24 +177,43 @@ color: #f1f1f1;
 }
 @keyframes txtcolor {
     0% {
-        color: red;
-    }
+             color: red;
+         }
 
-    30% {
-        color: green;
-    }
+         10% {
+             color: green;
+         }
 
-    60% {
-        color: blue;
-    }
+         20% {
+             color: blue;
+         }
 
-    90% {
-        color: black;
-    }
+         30% {
+             color: black;
+         }
 
-    100% {
-        color: purple;
-    }
+         40% {
+             color: purple;
+         }
+         50% {
+             color: red;
+         }
+
+         60% {
+             color: green;
+         }
+
+         70% {
+             color: blue;
+         }
+
+         80% {
+             color: black;
+         }
+
+         100% {
+             color: purple;
+         }
 }
 </style>
 
