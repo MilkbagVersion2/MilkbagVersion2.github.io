@@ -9,11 +9,11 @@ Front end for our collaborative web tool
 ![Image description](signin.PNG)
 
 # Sign in using in the page above if account is already created.
-- If you have not already created an account, click the link below the sign in button and input needed information in the page below.
+
+![Image description](signup.PNG)
+# If you have not already created an account, click the link below the sign in button and input needed information in the page above.
 - The email used must not have an account linked to it already. 
 - Username must not be linked to another account. 
-![Image description](signup.PNG)
-
 
 
 # NOTE: Second account to Milkbag19. 
