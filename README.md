@@ -6,6 +6,6 @@ Front end for our collaborative web tool
 
 - This will also be a test and example of my teamwork and project managment skills, as it is meant to be made within a certain timespan.  
 
-![Image description](signin.png)
+![Image description](signin.PNG)
 
 # NOTE: Second account to Milkbag19. 
