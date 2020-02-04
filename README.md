@@ -6,14 +6,10 @@ Front end for our collaborative web tool
 
 - This will also be a test and example of my teamwork and project managment skills, as it is meant to be made within a certain timespan.  
 
-![Image description](signin.PNG)
+- First Milestone (December 2nd, the completion of the main back end and front end for user profiles, sign in and sign up.)
 
-# Sign in using in the page above if account is already created.
+- Second Milestone (TBD, The completion of the dashboard with full front end and back end functionality.)
 
-![Image description](signup.PNG)
-# If you have not already created an account, click the link below the sign in button and input needed information in the page above.
-- The email used must not have an account linked to it already. 
-- Username must not be linked to another account. 
-
+- Third Mileston (TBD, Multi-user platform, with chat feature working.)
 
 # NOTE: Second account to Milkbag19. 

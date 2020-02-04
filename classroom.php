@@ -224,12 +224,9 @@
                    echo"<script>window.location.href = 'classroom.php';</script>";
                }?>
 
-                   <button id = "n" class="submit" name = "n" >Reset</button>
        </form>
            </table>
-<?php
-
-          ?>                                                                                                                                                                                                                                                                                                                                                                                                                                     ?>
+                                                                                                                                                                                                                                                                                                                                                                                                                                 ?>
 
 
        </div>

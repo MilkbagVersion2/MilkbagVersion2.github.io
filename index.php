@@ -1,5 +1,6 @@
 <?php
 include_once('database.php');
+
 checkSignin();
 ?>
 
@@ -31,7 +32,7 @@ font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleG
 }
 .titleText{
 
-      font-size:45pt;margin:0px;padding:0px;color:orange;-webkit-text-stroke: 1px black;
+      font-size:45pt;margin:0px;padding:0px;color:#222222;-webkit-text-stroke: 1px black;
       }
    .titleTextG{
 
@@ -121,11 +122,11 @@ body{
    border: 2px solid dodgerblue;
    border-radius: 0px;
    width:60%;
-   background: rgba(255, 255, 255, 1);
+   background:#FFDD55;
+
 
  }
  .input-field:hover {
-    background: rgba(255, 255, 255, 0.8);
 
   }
  .btn {
@@ -180,7 +181,7 @@ body{
 </head>
 
 
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <title>Groupify</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -193,8 +194,18 @@ body{
 <div align="center" class="signInUnity" style="">
 
 
-<div class="SignInTitle" style="margin:0px; padding:0px; ">
-    <h1 style="color: #FFDD33;" class="title"><br>- Groupify -<br><br> Sign In</h1>
+<div class="SignInTitle" style="margin:0px; padding:0px; padding-top:4vh;">
+<h1 class = "Groupify" style="padding-top:5vh;width:26vw;background-color:#FFDD33;;border-radius:20px 0px 20px 0px;transform:rotate(5deg);padding:4px;">
+                        <span class="titleText" >G</span>
+                        <span class="titleText" >r</span>
+                        <span class="titleText" >o</span>
+                        <span class="titleText" >u</span>
+                        <span class="titleText" >p</span>
+                        <span class="titleText" >i</span>
+                        <span class="titleText" >f</span>
+                        <span class="titleText" >y</span>
+                    </h1>
+    <h1 style="color: #FFDD33;" class="title"> Sign In</h1>
 </div>
 <div class="signInBox">
 <form id ="yeet" name="SignInForm" method="post" enctype="multipart/form-data">

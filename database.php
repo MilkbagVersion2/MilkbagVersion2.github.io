@@ -366,7 +366,7 @@ checkSession();
                   $results = $stmt->get_result();
                   $TeacherName= $results->fetch_object();
 */
-          echo "<div style='height:22vh; width:22vw;margin:10px;text-align:center;display:inline-block;background-color:white;border-radius:5px;border: 1px solid gray;' class='classBox'>
+          echo "<div style='' class='classBox'>
                         <button id='class' style='height:11vh; width:22vw; border:none;box-shadow: none;'  class='submit1' name = 'class' value='$row->classCode' >$row->ClassName<br> [$row->classCode]</button>
                  </div>";
       }
@@ -461,11 +461,12 @@ checkSession();
 
            }
  function checkSignin(){
+ if(array_key_exists ( 'user' , $_SESSION )){
     if($_SESSION['user']!=null){
     echo"yeet2";
         echo"<script>window.location.href='dashboard.php'</script>";
        }
-
+    }
  }
 //=====================================================================\\
 //When enter is pressed, or submit is clicked, then either submit      \\
