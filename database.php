@@ -6,11 +6,12 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+
  session_start();
- $servername = "localhost";  //declaring a placeholder for the database server name.
- $username = "milkbag19";    //declaring a placeholder for the database username sign in.
- $password = "yeet";         //declaring a placeholder for the database password sign in.
- $database = "userinfo";     //declaring which database within the server to connect to.
+ $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+ $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+ $password = "b155c581";         //declaring a placeholder for the database password sign in.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  // Create connection
  $mysqli = new mysqli($servername, $username, $password, $database);
  // Check connection
@@ -20,10 +21,10 @@ require 'PHPMailer/src/SMTP.php';
      function upload(){
       //function meant to upload data to the database.  Mainly for user creation.
      checkSession();
-     $servername = "heroku_ddbc7204b6736f4";
-     $username = "milkbag19";
-     $password = "yeet";
-     $database = "userinfo";
+ $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+ $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+ $password = "b155c581";         //declaring a placeholder for the database password sign in.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
      //=====================================================================\\
      //All $_POST variables are grabbing the values from HTML text boxes    \\
      //=====================================================================\\
@@ -90,10 +91,10 @@ require 'PHPMailer/src/SMTP.php';
      }
  function signIn(){
  checkSession();
- $servername = "us-cdbr-iron-east-04.cleardb.net";
- $username = "milkbag19";
- $password = "yeet";
- $database = "userinfo";
+ $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+ $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+ $password = "b155c581";         //declaring a placeholder for the database password sign in.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
 
  $usernameInput = $_POST['username'];
  $usernameInput = strtolower($usernameInput);
@@ -132,10 +133,10 @@ require 'PHPMailer/src/SMTP.php';
 
  function updatePassword(){
  checkSession();
- $servername = "us-cdbr-iron-east-04.cleardb.net";
- $username = "milkbag19";
- $password = "yeet";
- $database = "userinfo";
+ $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+ $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+ $password = "b155c581";         //declaring a placeholder for the database password sign in.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  $id = $_SESSION['user']['userId'];
  $oldPassword = $_SESSION['user']['password'];
  $newPassword = $_POST['password'];
@@ -188,10 +189,10 @@ require 'PHPMailer/src/SMTP.php';
  }
  function updateUsername(){
  checkSession();
- $servername = "heroku_ddbc7204b6736f4";
- $username = "milkbag19";
- $password = "yeet";
- $database = "userinfo";
+ $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+ $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+ $password = "b155c581";         //declaring a placeholder for the database password sign in.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  $id = $_SESSION['user']['userId'];
  $oldUsername = $_SESSION['user']['username'];
  $newUsername = $_POST['username'];
@@ -253,11 +254,11 @@ require 'PHPMailer/src/SMTP.php';
  function addClassroom(){
   //function meant to upload data to the database.  Mainly for user creation.
       checkSession();
-      $servername = "heroku_ddbc7204b6736f4";
-      $username = "milkbag19";
-      $password = "yeet";
+      $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+      $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+      $password = "b155c581";         //declaring a placeholder for the database password sign in.
+      $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
       $className = $_POST['className'];
-      $database = "userinfo";
       $idUser = $_SESSION['user']['userId'];
       $classCode = rand(10000,99999);
 
@@ -286,10 +287,10 @@ require 'PHPMailer/src/SMTP.php';
   function removeClassroom(){
    //function meant to upload data to the database.  Mainly for user creation.
        checkSession();
-       $servername = "heroku_ddbc7204b6736f4";
-       $username = "milkbag19";
-       $password = "yeet";
-       $database = "userinfo";
+        $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+        $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+        $password = "b155c581";         //declaring a placeholder for the database password sign in.
+        $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
        $idUser = $_SESSION['user']['userId'];
        $classCode=$_SESSION['currentClass'];
        $mysqli = new mysqli($servername, $username, $password, $database);
@@ -305,10 +306,10 @@ require 'PHPMailer/src/SMTP.php';
   }
 function classJoin(){
 checkSession();
-    $servername = "heroku_ddbc7204b6736f4";
-    $username = "milkbag19";
-    $password = "yeet";
-    $database = "userinfo";
+     $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+     $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+     $password = "b155c581";         //declaring a placeholder for the database password sign in.
+     $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
     $mysqli = new mysqli($servername, $username, $password, $database);
     $userId1 = $_SESSION['user']['userId'];
     $classCode = $_POST['codeInput'];
@@ -331,10 +332,10 @@ checkSession();
 
  function classSelect(){
     checkSession();
-       $servername = "heroku_ddbc7204b6736f4";
-       $username = "milkbag19";
-       $password = "yeet";
-       $database = "userinfo";
+        $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+        $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+        $password = "b155c581";         //declaring a placeholder for the database password sign in.
+        $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
       $mysqli = new mysqli($servername, $username, $password, $database);
       $userId1 = $_SESSION['user']['userId'];
 
@@ -374,11 +375,11 @@ checkSession();
  function addTasks(){
    //function meant to upload data to the database.  Mainly for user creation.
        checkSession();
-       $servername = "heroku_ddbc7204b6736f4";
-       $username = "milkbag19";
-       $password = "yeet";
+        $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+        $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+        $password = "b155c581";         //declaring a placeholder for the database password sign in.
+        $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
        $taskName = $_POST['taskName'];
-       $database = "userinfo";
        $idUser = $_SESSION['user']['userId'];
        $classCode=$_SESSION['currentClass'];
        $stus = "Working";
@@ -398,10 +399,10 @@ checkSession();
   }
 function loadTasks(){
 checkSession();
-    $servername = "heroku_ddbc7204b6736f4";
-           $username = "milkbag19";
-           $password = "yeet";
-           $database = "userinfo";
+     $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+     $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+     $password = "b155c581";         //declaring a placeholder for the database password sign in.
+     $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
           $mysqli = new mysqli($servername, $username, $password, $database);
           $classCode = $_SESSION['currentClass'];
           //code below was sourced via helpful user, on the internet. He also described that our table could be modified by users (which isn't good) and the suggested code fix below would fix it.
