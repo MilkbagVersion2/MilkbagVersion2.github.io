@@ -20,7 +20,7 @@ require 'PHPMailer/src/SMTP.php';
      function upload(){
       //function meant to upload data to the database.  Mainly for user creation.
      checkSession();
-     $servername = "localhost";
+     $servername = "heroku_ddbc7204b6736f4";
      $username = "milkbag19";
      $password = "yeet";
      $database = "userinfo";
@@ -64,7 +64,7 @@ require 'PHPMailer/src/SMTP.php';
                          if ($mysqli->query($upload) === TRUE) {
                              //echo "New record created successfully";
 
-                             header("Location: index.php");
+                             header("Location: https://group-ify.herokuapp.com/index.php");
                          } else {
                              //echo "Error: " . $upload . "<br>" . $mysqli->error;
                          }
@@ -90,7 +90,7 @@ require 'PHPMailer/src/SMTP.php';
      }
  function signIn(){
  checkSession();
- $servername = "localhost";
+ $servername = "heroku_ddbc7204b6736f4";
  $username = "milkbag19";
  $password = "yeet";
  $database = "userinfo";
@@ -114,7 +114,7 @@ require 'PHPMailer/src/SMTP.php';
 
          $_SESSION['user'] = $row;
          $_SESSION['error'] = "";
-         header("Location: dashboard.php");
+         header("Location: https://group-ify.herokuapp.com/dashboard.php");
          }else{
          $_SESSION['error']="invalid username/password";
           }
@@ -132,7 +132,7 @@ require 'PHPMailer/src/SMTP.php';
 
  function updatePassword(){
  checkSession();
- $servername = "localhost";
+ $servername = "heroku_ddbc7204b6736f4";
  $username = "milkbag19";
  $password = "yeet";
  $database = "userinfo";
@@ -188,7 +188,7 @@ require 'PHPMailer/src/SMTP.php';
  }
  function updateUsername(){
  checkSession();
- $servername = "localhost";
+ $servername = "heroku_ddbc7204b6736f4";
  $username = "milkbag19";
  $password = "yeet";
  $database = "userinfo";
@@ -253,7 +253,7 @@ require 'PHPMailer/src/SMTP.php';
  function addClassroom(){
   //function meant to upload data to the database.  Mainly for user creation.
       checkSession();
-      $servername = "localhost";
+      $servername = "heroku_ddbc7204b6736f4";
       $username = "milkbag19";
       $password = "yeet";
       $className = $_POST['className'];
@@ -286,7 +286,7 @@ require 'PHPMailer/src/SMTP.php';
   function removeClassroom(){
    //function meant to upload data to the database.  Mainly for user creation.
        checkSession();
-       $servername = "localhost";
+       $servername = "heroku_ddbc7204b6736f4";
        $username = "milkbag19";
        $password = "yeet";
        $database = "userinfo";
@@ -305,7 +305,7 @@ require 'PHPMailer/src/SMTP.php';
   }
 function classJoin(){
 checkSession();
-    $servername = "localhost";
+    $servername = "heroku_ddbc7204b6736f4";
     $username = "milkbag19";
     $password = "yeet";
     $database = "userinfo";
@@ -331,7 +331,7 @@ checkSession();
 
  function classSelect(){
     checkSession();
-       $servername = "localhost";
+       $servername = "heroku_ddbc7204b6736f4";
        $username = "milkbag19";
        $password = "yeet";
        $database = "userinfo";
@@ -374,7 +374,7 @@ checkSession();
  function addTasks(){
    //function meant to upload data to the database.  Mainly for user creation.
        checkSession();
-       $servername = "localhost";
+       $servername = "heroku_ddbc7204b6736f4";
        $username = "milkbag19";
        $password = "yeet";
        $taskName = $_POST['taskName'];
@@ -398,7 +398,7 @@ checkSession();
   }
 function loadTasks(){
 checkSession();
-    $servername = "localhost";
+    $servername = "heroku_ddbc7204b6736f4";
            $username = "milkbag19";
            $password = "yeet";
            $database = "userinfo";
@@ -427,7 +427,7 @@ checkSession();
                                         $updateQuery = "UPDATE updatedtasks SET `stus` = '$value' WHERE `userId` = '$userId'";
                                         $stmt1 = $mysqli->prepare($updateQuery);
                                                                       $stmt1->execute();
-                                                                      echo"<script>window.location.href='classroom.php'</script>";
+                                                                      echo"<script>window.location.href='https://group-ify.herokuapp.com/classroom.php'</script>";
                                      }
                                      else if(isset($_POST['working'])){
                                       $value = $_POST['working'];

@@ -298,13 +298,13 @@ color: #f1f1f1;
                 <a href="dashboard.php" style="text-decoration: none;">
                     <h1 class = "Groupify" style="margin-left:20px;background-color:#222222;border-radius:20px 0px 20px 0px;transform:rotate(5deg);padding:4px;">
                         <span class="titleText" >G</span>
-                        <span class="titleText" >r</span>
-                        <span class="titleText" >o</span>
-                        <span class="titleText" >u</span>
-                        <span class="titleText" >p</span>
-                        <span class="titleText" >i</span>
-                        <span class="titleText" >f</span>
-                        <span class="titleText" >y</span>
+                        <span class="titleText" >R</span>
+                        <span class="titleText" >O</span>
+                        <span class="titleText" >U</span>
+                        <span class="titleText" >P</span>
+                        <span class="titleText" >I</span>
+                        <span class="titleText" >F</span>
+                        <span class="titleText" >Y</span>
                     </h1>
                     </a>
                 </div>
