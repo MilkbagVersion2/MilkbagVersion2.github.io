@@ -90,7 +90,7 @@ require 'PHPMailer/src/SMTP.php';
      }
  function signIn(){
  checkSession();
- $servername = "heroku_ddbc7204b6736f4";
+ $servername = "us-cdbr-iron-east-04.cleardb.net";
  $username = "milkbag19";
  $password = "yeet";
  $database = "userinfo";
@@ -132,7 +132,7 @@ require 'PHPMailer/src/SMTP.php';
 
  function updatePassword(){
  checkSession();
- $servername = "heroku_ddbc7204b6736f4";
+ $servername = "us-cdbr-iron-east-04.cleardb.net";
  $username = "milkbag19";
  $password = "yeet";
  $database = "userinfo";
