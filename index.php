@@ -139,41 +139,7 @@ body{
    opacity: 0.9;
  }
  *:focus {outline:none}
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-@keyframes txtcolor {
-    0% {
-        color: #45a3e5
-    }
-
-    30% {
-        color: #66bf39
-    }
-
-    60% {
-        color: #eb670f
-    }
-
-    90% {
-        color: #f35
-    }
-
-    100% {
-        color: #864cbf
-    }
-}
 @keyframes slidein {
-
-
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
 }

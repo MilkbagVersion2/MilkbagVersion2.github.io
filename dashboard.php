@@ -142,6 +142,10 @@ function openCreate(){
 
 
 }
+.TeacherDisplay{
+font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+font-weight:300;
+}
 .submit1:hover{
     cursor:pointer;
     opacity:0.8;
