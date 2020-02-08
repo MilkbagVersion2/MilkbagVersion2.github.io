@@ -199,7 +199,7 @@ body{
                         <span class="titleText" >G</span>
                         <span class="titleText" >r</span>
                         <span class="titleText" >o</span>
-                        <span class="titleText" >ugg</span>
+                        <span class="titleText" >u</span>
                         <span class="titleText" >p</span>
                         <span class="titleText" >i</span>
                         <span class="titleText" >f</span>
