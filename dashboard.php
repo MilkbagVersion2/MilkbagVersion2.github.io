@@ -17,7 +17,7 @@ function closeJoin() {
   document.getElementById("joinbtn").style.height = "0px";
 }
 function openCreate(){
- window.location.href ="classroomCreate.php";
+ window.location.href ="ClassroomCreate.php";
 }
 </script>
 <style>
