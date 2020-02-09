@@ -167,18 +167,18 @@ body{
     <h2 class="usernameDisplay">Username : <?php echo $_SESSION['user']['username']; ?><h2>
 
      <div class="input-container">
-        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="text" placeholder="New Username" name="password">
+        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="text" placeholder="New Username" name="changeUsername">
       </div>
       <p style="font-size:12px;color:red;"><?php $error="";if(isset($_POST['changeUsername']) && $_POST['changeUsername'] == ''){ echo $_SESSION['error']; } ?></p>
           <button  id = "changeUsername" class="submit"  name="changeUsername" >Change</button>
      <br>
      <br>
      <div class="input-container">
-        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="password" placeholder="New Password" name="password">
+        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="password" placeholder="New Password" name="changePassword">
      </div>
      <br>
      <div class="input-container">
-        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="password" placeholder="Confirm Password" name="password">
+        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="password" placeholder="Confirm Password" name="passwordCon">
      </div>
         <p style="font-size:12px;color:red;"><?php $error="";if(isset($_POST['changePassword']) && $_POST['changePassword'] == ''){ echo $_SESSION['error']; } ?></p>
           <button  id = "changePassword" class="submit"  name="changePassword" >Change</button>
