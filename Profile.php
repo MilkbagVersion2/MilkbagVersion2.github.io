@@ -156,7 +156,7 @@ body{
 
 
 <div class="SignInTitle" style="margin:0px; padding:0px; display:inline-block;width:85%;">
-   <a href="dashboard.php"><img src="https://img.icons8.com/windows/512/000000/gender-neutral-user.png" style="width:150px;height:150px;margin:0px;padding:0px;"></a>
+   <img src="https://img.icons8.com/bubbles/500/000000/guest-male.png"style="width:150px;height:150px;margin:0px;padding:0px;">
    <h1 class="profileTitle">Your Profile</h1>
 </div>
 <div class="signInBox">
@@ -167,19 +167,22 @@ body{
     <h2 class="usernameDisplay">Username : <?php echo $_SESSION['user']['username']; ?><h2>
 
      <div class="input-container">
-        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="text" placeholder="New Username" name="changeUsername">
+        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="password" placeholder="Password" name="password">
       </div>
       <p style="font-size:12px;color:red;"><?php $error="";if(isset($_POST['changeUsername']) && $_POST['changeUsername'] == ''){ echo $_SESSION['error']; } ?></p>
           <button  id = "changeUsername" class="submit"  name="changeUsername" >Change</button>
      <br>
      <br>
      <div class="input-container">
-        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="password" placeholder="New Password" name="changePassword">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Password" name="password">
      </div>
      <br>
      <div class="input-container">
-        <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="password" placeholder="Confirm Password" name="passwordCon">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Confirm password" name="passwordCon">
      </div>
+     <br>
         <p style="font-size:12px;color:red;"><?php $error="";if(isset($_POST['changePassword']) && $_POST['changePassword'] == ''){ echo $_SESSION['error']; } ?></p>
           <button  id = "changePassword" class="submit"  name="changePassword" >Change</button>
     <br>
