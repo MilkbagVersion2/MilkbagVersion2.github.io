@@ -161,7 +161,7 @@
 
        <div id="mySidenav" class="sidenav">
            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-           <a href="Profile.php">PROFILE OPTIONS</a>
+           <a href="Profile.php"><?php $_SESSION['user']['username']?></a>
 
            <form id ="lol" name="SignInForm" method="post" enctype="multipart/form-data">
            <button name="logout" id="logout" class="logout">LOG OUT</button>
