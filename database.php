@@ -91,10 +91,10 @@ require 'PHPMailer/src/SMTP.php';
      }
  function signIn(){
  checkSession();
- $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
- $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
- $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
+  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
+  $password = "b155c581";         //declaring a placeholder for the database password sign in.
+  $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  $usernameInput = $_POST['username'];
  $usernameInput = strtolower($usernameInput);
  $passwordInput = $_POST['password'];
