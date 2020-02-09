@@ -6,13 +6,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-b68081f3e213ce
 
-b155c581
-
-us-cdbr-iron-east-04.cleardb.net
-
-heroku_ddbc7204b6736f4
 
  session_start();
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
