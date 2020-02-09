@@ -156,7 +156,7 @@ body{
 
 
 <div class="SignInTitle" style="margin:0px; padding:0px; display:inline-block;width:85%;">
-   <img src="https://img.icons8.com/bubbles/500/000000/guest-male.png"style="width:150px;height:150px;margin:0px;padding:0px;">
+   <img src="https://img.icons8.com/windows/512/000000/gender-neutral-user.png"style="width:150px;height:150px;margin:0px;padding:0px;">
    <h1 class="profileTitle">Your Profile</h1>
 </div>
 <div class="signInBox">
