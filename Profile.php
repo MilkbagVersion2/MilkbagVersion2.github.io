@@ -165,7 +165,7 @@ body{
 
 <br>
     <br>
-    <h2 class="usernameDisplay">Username : <?php echo $_SESSION['user']['username']; ?><h2><h2>Email : <?php echo$_SESSION['user']['email']; ?></h2>
+    <h2 class="usernameDisplay">Username : <?php echo $_SESSION['user']['username']; ?><h2><h2 class="usernameDisplay">Email : <?php echo$_SESSION['user']['email']; ?></h2>
 
      <div class="input-container">
         <input style="text-align: center;border:none;height:5vh;margin: 0 auto 10px auto;"class="input-field" type="text" placeholder="New Username" name="username">
