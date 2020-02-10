@@ -11,7 +11,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  // Create connection
  $mysqli = new mysqli($servername, $username, $password, $database);
  // Check connection
@@ -24,7 +24,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
      //=====================================================================\\
      //All $_POST variables are grabbing the values from HTML text boxes    \\
      //=====================================================================\\
@@ -65,7 +65,7 @@ require 'PHPMailer/src/SMTP.php';
                          if ($mysqli->query($upload) === TRUE) {
                              //echo "New record created successfully";
 
-                             header("Location: https://group-ify.herokuapp.com/index.php");
+                             header("Location: index.php");
                          } else {
                              //echo "Error: " . $upload . "<br>" . $mysqli->error;
                          }
@@ -94,7 +94,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  $usernameInput = $_POST['username'];
  $usernameInput = strtolower($usernameInput);
  $passwordInput = $_POST['password'];
@@ -114,7 +114,7 @@ require 'PHPMailer/src/SMTP.php';
 
          $_SESSION['user'] = $row;
          $_SESSION['error'] = "";
-         header("Location: https://group-ify.herokuapp.com/dashboard.php");
+         header("Location: dashboard.php");
          }else{
          $_SESSION['error']="invalid username/password";
           }
@@ -135,7 +135,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  $id = $_SESSION['user']['userId'];
  $oldPassword = $_SESSION['user']['password'];
  $newPassword = $_POST['password'];
@@ -191,7 +191,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
  $id = $_SESSION['user']['userId'];
  $oldUsername = $_SESSION['user']['username'];
  $newUsername = $_POST['username'];
@@ -253,7 +253,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
      $classCode = $_SESSION['currentClass'];
 
      $mysqli = new mysqli($servername, $username, $password, $database);
@@ -280,7 +280,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
       $className = $_POST['className'];
       $idUser = $_SESSION['user']['userId'];
       $classCode = rand(10000,99999);
@@ -302,7 +302,7 @@ require 'PHPMailer/src/SMTP.php';
               $upload = "INSERT INTO class (ClassName,userid,classCode,Teacher) VALUES ('$className','$idUser','$classCode',1)";
 
               if ($mysqli->query($upload) === TRUE) {
-                echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
+                echo"<script>window.location.href='dashboard.php';</script>";
               }
              }
  }
@@ -312,7 +312,7 @@ require 'PHPMailer/src/SMTP.php';
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
        $idUser = $_SESSION['user']['userId'];
        $classCode=$_SESSION['currentClass'];
        $mysqli = new mysqli($servername, $username, $password, $database);
@@ -322,7 +322,7 @@ require 'PHPMailer/src/SMTP.php';
 
                $upload = "DELETE FROM `class` WHERE userid='$idUser' AND classCode='$classCode'";
                if ($mysqli->query($upload) === TRUE) {
-                 echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
+                 echo"<script>window.location.href='dashboard.php';</script>";
                }
 
   }
@@ -331,7 +331,7 @@ checkSession();
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
     $mysqli = new mysqli($servername, $username, $password, $database);
     $userId1 = $_SESSION['user']['userId'];
     $classCode = $_POST['codeInput'];
@@ -352,7 +352,7 @@ checkSession();
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
       $mysqli = new mysqli($servername, $username, $password, $database);
       $userId1 = $_SESSION['user']['userId'];
       $sql = "SELECT * FROM class WHERE userid = ?";
@@ -387,7 +387,7 @@ checkSession();
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
        $taskName = $_POST['taskName'];
        $idUser = $_SESSION['user']['userId'];
        $classCode=$_SESSION['currentClass'];
@@ -411,7 +411,7 @@ checkSession();
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
- $database = " heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
+ $database = "heroku_ddbc7204b6736f4";     //declaring which database within the server to connect to.
           $mysqli = new mysqli($servername, $username, $password, $database);
           $classCode = $_SESSION['currentClass'];
           //code below was sourced via helpful user, on the internet. He also described that our table could be modified by users (which isn't good) and the suggested code fix below would fix it.
@@ -437,14 +437,14 @@ checkSession();
                                         $updateQuery = "UPDATE updatedtasks SET `stus` = '$value' WHERE `userId` = '$userId'";
                                         $stmt1 = $mysqli->prepare($updateQuery);
                                                                       $stmt1->execute();
-                                                                      echo"<script>window.location.href='https://group-ify.herokuapp.com/classroom.php'</script>";
+                                                                      echo"<script>window.location.href='classroom.php'</script>";
                                      }
                                      else if(isset($_POST['working'])){
                                       $value = $_POST['working'];
                                       $updateQuery = "UPDATE updatedtasks SET `stus` = '$value' WHERE `userId` = '$userId'";
                                       $stmt1 = $mysqli->prepare($updateQuery);
                                       $stmt1->execute();
-                                        echo"<script>window.location.href='https://group-ify.herokuapp.com/classroom.php'</script>";
+                                        echo"<script>window.location.href='classroom.php'</script>";
                                      }
             echo"<tr style='background-color:white;border-radius:10px;border:0px solid #dddddd;  '><th style='border:0px solid #dddddd; height:2vh; width:33vw; '><div style='height:2vh;width:20px;background-color:red;display:block;'>  </div>$row->taskName</th><th style='border:1px solid #dddddd; height:2vh; width:33vw; '>$user->username</th><th><input type='date' name='due' value='2020-11-27'><div class='dropdown'><button class='dropbtn' id='statusMenu'>$row->stus</button>
                                                                                                                                                                                                                                                                                                                                                                                                                                               <div class='dropdown-content'>
