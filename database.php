@@ -65,7 +65,7 @@ require 'PHPMailer/src/SMTP.php';
                          if ($mysqli->query($upload) === TRUE) {
                              //echo "New record created successfully";
 
-                             header("Location: index.php");
+                             header("Location: https://group-ify.herokuapp.com/index.php");
                          } else {
                              //echo "Error: " . $upload . "<br>" . $mysqli->error;
                          }
@@ -114,7 +114,7 @@ require 'PHPMailer/src/SMTP.php';
 
          $_SESSION['user'] = $row;
          $_SESSION['error'] = "";
-         header("Location: dashboard.php");
+         header("Location: https://group-ify.herokuapp.com/dashboard.php");
          }else{
          $_SESSION['error']="invalid username/password";
           }
@@ -302,7 +302,7 @@ require 'PHPMailer/src/SMTP.php';
               $upload = "INSERT INTO class (ClassName,userid,classCode,Teacher) VALUES ('$className','$idUser','$classCode',1)";
 
               if ($mysqli->query($upload) === TRUE) {
-                echo"<script>window.location.href='dashboard.php';</script>";
+                echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
               }
              }
  }
@@ -322,7 +322,7 @@ require 'PHPMailer/src/SMTP.php';
 
                $upload = "DELETE FROM `class` WHERE userid='$idUser' AND classCode='$classCode'";
                if ($mysqli->query($upload) === TRUE) {
-                 echo"<script>window.location.href='dashboard.php';</script>";
+                 echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
                }
 
   }
@@ -437,14 +437,14 @@ checkSession();
                                         $updateQuery = "UPDATE updatedtasks SET `stus` = '$value' WHERE `userId` = '$userId'";
                                         $stmt1 = $mysqli->prepare($updateQuery);
                                                                       $stmt1->execute();
-                                                                      echo"<script>window.location.href='classroom.php'</script>";
+                                                                      echo"<script>window.location.href='https://group-ify.herokuapp.com/classroom.php'</script>";
                                      }
                                      else if(isset($_POST['working'])){
                                       $value = $_POST['working'];
                                       $updateQuery = "UPDATE updatedtasks SET `stus` = '$value' WHERE `userId` = '$userId'";
                                       $stmt1 = $mysqli->prepare($updateQuery);
                                       $stmt1->execute();
-                                        echo"<script>window.location.href='classroom.php'</script>";
+                                        echo"<script>window.location.href='https://group-ify.herokuapp.com/classroom.php'</script>";
                                      }
             echo"<tr style='background-color:white;border-radius:10px;border:0px solid #dddddd;  '><th style='border:0px solid #dddddd; height:2vh; width:33vw; '><div style='height:2vh;width:20px;background-color:red;display:block;'>  </div>$row->taskName</th><th style='border:1px solid #dddddd; height:2vh; width:33vw; '>$user->username</th><th><input type='date' name='due' value='2020-11-27'><div class='dropdown'><button class='dropbtn' id='statusMenu'>$row->stus</button>
                                                                                                                                                                                                                                                                                                                                                                                                                                               <div class='dropdown-content'>
