@@ -11,6 +11,12 @@
        function closeNav() {
          document.getElementById("mySidenav").style.width = "0px";
        }
+       function closeMember(){
+         document.getElementById("members").style.width = "0px";
+       }
+       function openMember(){
+         document.getElementById("members").style.width = "250px";
+       }
        </script>
        <style>
            .titleText{
@@ -60,6 +66,40 @@
                  font-size: 36px;
                  margin-left: 50px;
                }
+
+               .members {
+                                height: 100%;
+                                width: 0;
+                                position: fixed;
+                                     z-index: 1;
+                                     top: 0;
+                                     left: 0;
+                                     background-color: #111;
+                                     overflow-x: hidden;
+                                     transition: 0.5s;
+                                     padding-top: 60px;
+                                    text-align:right;
+                              }
+
+                              .members a {
+                                text-decoration: none;
+                                font-size: 35px;
+                                color: #818181;
+                                display: block;
+                                transition: 0.3s;
+                                font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+                              }
+
+                              .members a:hover {
+                                color: #f1f1f1;
+                              }
+
+                              .members .closebtn {
+                                position: absolute;
+                                top: 0;
+                                font-size: 36px;
+                                margin-left: 20px;
+                              }
 
            @media screen and (max-height: 450px) {
              .sidenav {padding-top: 15px;}
@@ -174,6 +214,14 @@
            </form>
        </div>
 
+       <div id="members" class="members" >
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeMember()">&times;</a>
+                    <h1 style="color:white;border-bottom:#FFDD33 2px solid;border-top:#FFDD33 2px solid;text-align:center;font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;">Members
+                    <?php showMembers();?>
+                    </h1>
+                  </form>
+              </div>
+
        <body style="background-image: url('memphis-colorful.png'); padding: 0px; border-radius:0px; padding:0px; margin:0px;">
            <div style="display:inline-block; width:100%; height:15%; padding:0%; margin:0%; background-color:lightGrey;">
 
@@ -192,7 +240,7 @@
                    </a>
                </div>
                    <span style="font-size:50px;cursor:pointer; display:inline-block; float:right; margin-top:20px; margin-right:20px;" onclick="openNav()">&#9776;</span>
-
+                   <span style="font-size:50px;cursor:pointer; display:inline-block; float:right; margin-top:20px; margin-right:20px;" onclick="openMember()">Members</span>
          <form id ="yeet" name="SignInForm" method="post" enctype="multipart/form-data">
                    <button style="text-align:center;background-color:green;font-size:30px;cursor:pointer; display:inline-block; float:right; margin-top:40px; margin-right:20px;width:7vw;" class="submit" name='leave' >Leave</button>
        </form>
