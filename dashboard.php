@@ -3,6 +3,9 @@ include_once('database.php');
 ?>
 
 <!DOCTYPE html>
+<div id = "loaderBack" class = "loaderBack">
+<div id = "loader"class="loader"></div>
+</div>
 <script>
     function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -21,226 +24,28 @@ function openCreate(){
 }
 </script>
 <style>
-    .titleText{
-        font-size:45pt;margin:0px;padding:0px;font-weight:1200;color: #FFDD33;
-        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    }
-    body{
 
-    }
-    .titleTextG{
-        font-size:45pt;margin:0px;padding:0px;color:black;font-weight:1200;
-    }
-
-    .logoText{
-        display:inline-block;
-    }
-
-    .sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-           z-index: 1;
-           top: 0;
-           right: 0;
-           background-color: #111;
-           overflow-x: hidden;
-           transition: 0.5s;
-           padding-top: 60px;
-          text-align:right;
-    }
-
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 35px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-      font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    }
-
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
-
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-    .joinMenu .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-    .joinMenu a:hover {
-          color: #f1f1f1;
-        }
-    .joinMenu a {
-          padding: 8px 8px 8px 32px;
-          text-decoration: none;
-          font-size: 25px;
-          color: #818181;
-          display: block;
-          transition: 0.3s;
-        }
-        @keyframes animatedgradient {
-        	0% {
-        		background-position: 0% 50%;
-        	}
-        	50% {
-        		background-position: 100% 50%;
-        	}
-        	100% {
-        		background-position: 0% 50%;
-        	}
-        }
-
-        .joinMenu{
-        border: 10px solid black;
-        border-color: red red black red;
-        }
-
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-      .joinMenu {padding-top: 15px;}
-      .joinMenu a {font-size: 18px;}
-    }
-
-.submit {
-    display:inline-block;
-    border-radius:10px;
-    transition:0.25s;
-    position:relative;
-    color: white;
-    width:6vw;
-    height:5vh;
-    background: #4C8FFB;
-    border: none;
-    overflow-x: hidden;
-     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-}
-
-.submit:hover {
-    background: #3F83F1;
-    opacity:0.9;
-}
-.submit1 {
-    display:inline-block;
-    border-radius:5px;
-    font-size:30px;
-    color: #2222222;
-    background:#FFDD33;
-    border: 1px #3079ED solid;
-    box-shadow: inset 0 1px 0 #80B0FB;
-
-
-}
-.TeacherDisplay{
-font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-font-weight:300;
-}
-.submit1:hover{
-    cursor:pointer;
-    opacity:0.8;
-    height:6vh;
-}
-
-.submit:active {
-    box-shadow: inset 0 2px 5px #2370FE;
-}
-*:focus {outline:none}
-button{
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-}
-.classBox{
-height:22vh;
-width:22vw;
-margin:10px;
-text-align:center;
-display:inline-block;
-background:#FFDD33;
-border-radius:10px;
-border: 1px solid gray;
-transition:0.25s;
-}
-.classBox:hover{
-    cursor:pointer;
-    opacity:0.75;
-}
-.logout{
-      padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 35px;
-            margin-top:25vh;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-            background-color:#111;
-            border:none;
-            float:right;
-}
-.logout:hover{
-color: #f1f1f1;
-}
-@keyframes slidein {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-
-}
-@keyframes txtcolor {
-    0% {
-             color: red;
-         }
-
-         10% {
-             color: green;
-         }
-
-         20% {
-             color: blue;
-         }
-
-         30% {
-             color: black;
-         }
-
-         40% {
-             color: purple;
-         }
-         50% {
-             color: red;
-         }
-
-         60% {
-             color: green;
-         }
-
-         70% {
-             color: blue;
-         }
-
-         80% {
-             color: black;
-         }
-
-         100% {
-             color: purple;
-         }
-}
 </style>
+<script>
+function myFunction() {
+  myVar = setTimeout(showPage, 2000);
+}
+             function showPage() {
+               document.getElementById("loader").style.opacity = "0";
+               document.getElementById("loaderBack").style.opacity = "0";
+               document.getElementById("loader").style.height = "0";
+               document.getElementById("loaderBack").style.height = "0";
+               document.getElementById("loader").style.width = "0";
+             }
+             </script>
 
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
     <meta charset="UTF-8">
     <title>Groupify</title>
 </head>
+
 <div style= "height:0.5vh;width:100%;background-color:lightgray;">
 <div style= "height:0.5vh;width:200%;background-color:red;animation: 2s slidein;float:right;">
 
@@ -265,6 +70,7 @@ color: #f1f1f1;
             $_SESSION['user']=null;
             echo"<script>window.location.href = 'index.php';</script>";
         }
+
     ?>
     </form>
 </div>
@@ -295,7 +101,7 @@ color: #f1f1f1;
 ?>
 </div>
 
-<body style=" padding: 0px; border-radius:0px; padding:0px; margin:0px;background-color:#222222;">
+<body onload="myFunction();" style=" padding: 0px; border-radius:0px; padding:0px; margin:0px;background-color:#222222;">
     <div style="display:inline-block; width:100%; height:15%; padding:0%; margin:0%; background-color:#FFDD33;">
 
          <div class="logoText" style="float:left; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;background-color:#2222222;" >
@@ -338,7 +144,12 @@ color: #f1f1f1;
         <?php
         if(isset($_POST['y']) && $_POST['y'] == ''){
             echo"<script>window.location.href = 'ClassroomCreate.php';</script>";
-        }?>
+        }
+        if(isset($_POST['contact'])){
+                    $_SESSION['teacherContact'] = $_POST['contact'];
+                    echo"<script>window.location.href = 'Contact.php'</script>";
+                }
+        ?>
 
 
 </form>

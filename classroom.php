@@ -15,8 +15,9 @@
          document.getElementById("members").style.width = "0px";
        }
        function openMember(){
-         document.getElementById("members").style.width = "250px";
+         document.getElementById("members").style.width = "450px";
        }
+
        </script>
        <style>
            .titleText{
@@ -101,6 +102,21 @@
                                 margin-left: 20px;
                               }
 
+
+                                                            .members button {
+                                                              text-decoration: none;
+                                                              font-size: 35px;
+                                                              background:none;
+                                                              border:none;
+                                                              color: #818181;
+                                                              display: block;
+                                                              transition: 0.3s;
+                                                              font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+                                                            }
+
+                                                            .members button:hover {
+                                                              color: #f1f1f1;
+                                                            }
            @media screen and (max-height: 450px) {
              .sidenav {padding-top: 15px;}
              .sidenav a {font-size: 18px;}
@@ -215,12 +231,28 @@
        </div>
 
        <div id="members" class="members" >
+       <form id ="lol" name="SignInForm" method="post" enctype="multipart/form-data">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeMember()">&times;</a>
                     <h1 style="color:white;border-bottom:#FFDD33 2px solid;border-top:#FFDD33 2px solid;text-align:center;font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;">Members
                     <?php showMembers();?>
                     </h1>
-                  </form>
+                    <h1 style="color:white;border-bottom:#FFDD33 2px solid;border-top:#FFDD33 2px solid;text-align:center;font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif;">Classes
+                    <?php showClasses();?>
+                    </h1>
+                    </form>
               </div>
+              <?php
+              if(isset($_POST['class']) &&$_POST['class'] != ''){
+                $_SESSION['currentClass'] = $_POST['class'];
+                echo"<script>windows.location.href='classroom.php'</script>";
+              }
+                ?>
+              <div id="classes" class="classes" >
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeMember()">&times;</a>
+
+                                  </h1>
+                            </div>
+
 
        <body style="background-image: url('memphis-colorful.png'); padding: 0px; border-radius:0px; padding:0px; margin:0px;">
            <div style="display:inline-block; width:100%; height:15%; padding:0%; margin:0%; background-color:lightGrey;">
