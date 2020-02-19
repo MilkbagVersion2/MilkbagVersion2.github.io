@@ -1,12 +1,12 @@
  .titleText{
-        font-size:45pt;margin:0px;padding:0px;font-weight:1200;color: #FFDD33;
+        font-size:4vw;margin:0px;padding:0px;font-weight:1200;color: #FFDD33;
         font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     }
     body{
 
     }
     .titleTextG{
-        font-size:45pt;margin:0px;padding:0px;color:black;font-weight:1200;
+        font-size:4vw;margin:0px;padding:0px;color:black;font-weight:1200;
     }
 
     .logoText{
@@ -148,7 +148,6 @@ border: 1px solid gray;
 transition:0.25s;
 }
 .classBox:hover{
-    cursor:pointer;
     opacity:0.75;
 }
 .logout{
@@ -196,6 +195,19 @@ color: #f1f1f1;
     position:fixed;
     transition:0.5s;
  }
+ .contact{
+         height:4vh;
+         margin-top:3vh;
+         width:8vw;
+         font-size:2vh;
+         border-radius:8px;
+         border:2px solid #222222;
+         background:#FFDD33;
+         }
+ .contact:hover{
+         background:#222222;
+         color:#FFDD33;
+         }
 @keyframes txtcolor {
     0% {
              color: red;

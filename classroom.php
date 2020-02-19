@@ -93,6 +93,7 @@
 
                               .members a:hover {
                                 color: #f1f1f1;
+                                background-color:black;
                               }
 
                               .members .closebtn {
@@ -106,17 +107,17 @@
                                                             .members button {
                                                               text-decoration: none;
                                                               font-size: 35px;
-                                                              background:none;
-                                                              border:none;
                                                               color: #818181;
-                                                              display: block;
                                                               transition: 0.3s;
                                                               font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+                                                              margin-top:5px;
+                                                            }
+                                                            .members #class:hover{
+                                                                background-color:black !important;
+                                                                color:#FFDD33;
                                                             }
 
-                                                            .members button:hover {
-                                                              color: #f1f1f1;
-                                                            }
+
            @media screen and (max-height: 450px) {
              .sidenav {padding-top: 15px;}
              .sidenav a {font-size: 18px;}
@@ -203,6 +204,7 @@
          from { transform: scaleX(0); }
          to   { transform: scaleX(1); }
        }
+
        </style>
 <div style= "height:0.5vh;width:100%;background-color:lightgray;">
 <div style= "height:0.5vh;width:200%;background-color:red;animation: 2s slidein;float:right;">
@@ -247,11 +249,7 @@
                 echo"<script>windows.location.href='classroom.php'</script>";
               }
                 ?>
-              <div id="classes" class="classes" >
-                                <a href="javascript:void(0)" class="closebtn" onclick="closeMember()">&times;</a>
 
-                                  </h1>
-                            </div>
 
 
        <body style="background-image: url('memphis-colorful.png'); padding: 0px; border-radius:0px; padding:0px; margin:0px;">
@@ -272,10 +270,13 @@
                    </a>
                </div>
                    <span style="font-size:50px;cursor:pointer; display:inline-block; float:right; margin-top:20px; margin-right:20px;" onclick="openNav()">&#9776;</span>
-                   <span style="font-size:50px;cursor:pointer; display:inline-block; float:right; margin-top:20px; margin-right:20px;" onclick="openMember()">Members</span>
+                   <span style="font-size:50px;cursor:pointer; display:inline-block; float:right; margin-top:20px; margin-right:20px;max-width: 30%;" onclick="openMember()">Members</span>
+
          <form id ="yeet" name="SignInForm" method="post" enctype="multipart/form-data">
                    <button style="text-align:center;background-color:green;font-size:30px;cursor:pointer; display:inline-block; float:right; margin-top:40px; margin-right:20px;width:7vw;" class="submit" name='leave' >Leave</button>
        </form>
+       <?php getClassName(); $currentClassroom = $_SESSION['currentClassName']; echo"<h1 style='text-align:center;margin:0;'>$currentClassroom</h1>"; ?>
+
                </div>
        </body>
 
