@@ -375,8 +375,8 @@ checkSession();
                   $results = $stmt->get_result();
                   $TeacherName= $results->fetch_object();
                   $usernameee = $TeacherName->username;
-          echo "<div style='width:22vw;' class='classBox'>
-                        <button id='class' style='height:18vh; width:32vw; border:none;box-shadow: none;font-size:2.5vw;'  class='submit1' name = 'class' value='$row->classCode' >$row->ClassName<br> [$row->classCode]</button>
+          echo "<div class='classBox'>
+                        <button id='class' style='height:13vh; width:32vw; border:none;box-shadow: none;font-size:2.5vw;'  class='submit1' name = 'class' value='$row->classCode' >$row->ClassName<br> [$row->classCode]</button>
                 <button class='contact' id='contact'name='contact' value='$TeacherName->userId'>Contact</button><br>
                 <h1 style='float:left;margin-left:1vw;font-size:2.5vw;'class='TeacherDisplay'>$usernameee</h1>
 

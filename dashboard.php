@@ -179,8 +179,8 @@ button{
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 .classBox{
-height:22vh;
-width:22vw;
+height:32vh;
+width:32vw;
 margin:10px;
 text-align:center;
 display:inline-block;
