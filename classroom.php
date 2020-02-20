@@ -219,14 +219,14 @@
 
        <div id="mySidenav" class="sidenav">
            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-           <a href="Profile.php"><?php $username=$_SESSION['user']['username']; echo"$username"?></a>
+           <a href="https://group-ify.herokuapp.com/Profile.php"><?php $username=$_SESSION['user']['username']; echo"$username"?></a>
 
            <form id ="lol" name="SignInForm" method="post" enctype="multipart/form-data">
            <button name="logout" id="logout" class="logout">LOG OUT</button>
            <?php
                if(isset($_POST['logout'])){
                    $_SESSION['user']=null;
-                   echo"<script>window.location.href = 'index.php';</script>";
+                   echo"<script>window.location.href = 'https://group-ify.herokuapp.com/index.php';</script>";
                }
            ?>
            </form>
@@ -246,7 +246,7 @@
               <?php
               if(isset($_POST['class']) &&$_POST['class'] != ''){
                 $_SESSION['currentClass'] = $_POST['class'];
-                echo"<script>windows.location.href='classroom.php'</script>";
+                echo"<script>windows.location.href='https://group-ify.herokuapp.com/classroom.php'</script>";
               }
                 ?>
 
@@ -256,7 +256,7 @@
            <div style="display:inline-block; width:100%; height:15%; padding:0%; margin:0%; background-color:lightGrey;">
 
                <div class="logoText" style="float:left; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;" >
-               <a href="dashboard.php" name="return" style="text-decoration: none;">
+               <a href="https://group-ify.herokuapp.com/dashboard.php" name="return" style="text-decoration: none;">
                    <h1 class = "Groupify" style="margin-left:3px">
                        <span class="titleTextG" >G</span>
                        <span class="titleTextG" >r</span>
@@ -302,7 +302,7 @@
 
                if(isset($_POST['y']) && $_POST['y'] == ''){
                    addTasks();
-                   echo"<script>window.location.href = 'classroom.php';</script>";
+                   echo"<script>window.location.href = 'https://group-ify.herokuapp.com/classroom.php';</script>";
                }?>
 
        </form>

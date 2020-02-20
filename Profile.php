@@ -157,7 +157,7 @@ body{
 
 <div class="SignInTitle" style="margin:0px; padding:0px; display:inline-block;width:85%;">
 
-   <a href="dashboard.php"><img src="https://img.icons8.com/windows/512/000000/gender-neutral-user.png"style="width:150px;height:150px;margin:0px;padding:0px;"></a>
+   <a href="https://group-ify.herokuapp.com/dashboard.php"><img src="https://img.icons8.com/windows/512/000000/gender-neutral-user.png"style="width:150px;height:150px;margin:0px;padding:0px;"></a>
    <h1 class="profileTitle">Your Profile</h1>
 </div>
 <div class="signInBox">

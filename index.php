@@ -74,7 +74,7 @@ checkSignin();
 
     <div style="margin-left:30%;width:200px;display:block;">
         <button  id = "submit" class="submit"  name="submit" style="animation: bgcolor 10s infinite;">Sign In</button><br>
-        <a style="color:rgba(114,137,218,1);font-size:15px;margin:0px;padding:0px;" href="SignUp.php">Dont have a Groupify account?</a>
+        <a style="color:rgba(114,137,218,1);font-size:15px;margin:0px;padding:0px;" href="https://group-ify.herokuapp.com/SignUp.php">Dont have a Groupify account?</a>
     </div>
 
 </form>

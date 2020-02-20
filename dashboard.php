@@ -319,7 +319,7 @@ function myFunction() {
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <?php
         $username = $_SESSION['user']['username'];
-        echo"<a href='Profile.php'>$username</a>";
+        echo"<a href='https://group-ify.herokuapp.com/Profile.php'>$username</a>";
         $_SESSION['currentClass']=null;
     ?>
 
@@ -328,7 +328,7 @@ function myFunction() {
     <?php
         if(isset($_POST['logout'])){
             $_SESSION['user']=null;
-            echo"<script>window.location.href = 'index.php';</script>";
+            echo"<script>window.location.href = 'https://group-ify.herokuapp.com/index.php';</script>";
         }
 
     ?>
@@ -355,7 +355,7 @@ function myFunction() {
 <?php
  if(isset($_POST['join']) && $_POST['join'] == ''){
                     classJoin();
-                     echo"<script>window.location.href = 'dashboard.php';</script>";
+                     echo"<script>window.location.href = 'https://group-ify.herokuapp.com/dashboard.php';</script>";
                      unset($_SESSION['join']);
                  }
 ?>
@@ -365,7 +365,7 @@ function myFunction() {
     <div style="display:inline-block; width:100%; height:15%; padding:0%; margin:0%; background-color:#FFDD33;">
 
          <div class="logoText" style="float:left; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;background-color:#2222222;" >
-                <a href="dashboard.php" style="text-decoration: none;">
+                <a href="https://group-ify.herokuapp.com/dashboard.php" style="text-decoration: none;">
                     <h1 class = "Groupify" style="margin-left:2vw;background-color:#222222;border-radius:20px 0px 20px 0px;transform:rotate(5deg);padding:4px;width:25vw;">
                         <span class="titleText" >G</span>
                         <span class="titleText" >R</span>
@@ -398,16 +398,16 @@ function myFunction() {
 
          if(isset($_POST['class']) && $_POST['class'] != ''){
                      $_SESSION['currentClass'] = $_POST['class'];
-                     echo"<script>window.location.href = 'classroom.php';</script>";
+                     echo"<script>window.location.href = 'https://group-ify.herokuapp.com/classroom.php';</script>";
                      unset($_SESSION['class']);
                  }?>
         <?php
         if(isset($_POST['y']) && $_POST['y'] == ''){
-            echo"<script>window.location.href = 'ClassroomCreate.php';</script>";
+            echo"<script>window.location.href = 'https://group-ify.herokuapp.com/ClassroomCreate.php';</script>";
         }
         if(isset($_POST['contact'])){
                     $_SESSION['teacherContact'] = $_POST['contact'];
-                    echo"<script>window.location.href = 'Contact.php'</script>";
+                    echo"<script>window.location.href = 'https://group-ify.herokuapp.com/Contact.php'</script>";
                 }
         ?>
 
