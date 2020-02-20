@@ -12,13 +12,30 @@ include_once('database.php');
 <script src="jquery.js"></script>
 <meta name="theme-color" content="#000000">
 <style>
-
+ .titleText{
+        font-size:4vw;margin:0px;padding:0px;font-weight:1200;color: #FFDD33;
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    }
 </style>
 </head>
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <title>Groupify</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body >
+<div class="logoText" style="float:left; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;background-color:#2222222;" >
+                <a href="https://group-ify.herokuapp.com/dashboard.php" style="text-decoration: none;">
+                    <h1 class = "Groupify" style="margin-left:2vw;background-color:#222222;border-radius:20px 0px 20px 0px;transform:rotate(5deg);padding:4px;width:25vw;">
+                        <span class="titleText" >G</span>
+                        <span class="titleText" >R</span>
+                        <span class="titleText" >O</span>
+                        <span class="titleText" >U</span>
+                        <span class="titleText" >P</span>
+                        <span class="titleText" >I</span>
+                        <span class="titleText" >F</span>
+                        <span class="titleText" >Y</span>
+                    </h1>
+                    </a>
+                </div>
 <div class="secondaryBody">
 <div align="center" class="signInUnity" style="">
 <div class="SignInTitle" style="margin:0px; padding:0px; padding-top:4vh;">
