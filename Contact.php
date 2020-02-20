@@ -22,7 +22,7 @@ include_once('database.php');
 <title>Groupify</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body >
-<div class="logoText" style=" font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;background-color:#2222222;" >
+<div class="logoText" style="margin-left:40%; font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif; font-style:italic;background-color:#2222222;" >
                 <a href="https://group-ify.herokuapp.com/dashboard.php" style="text-decoration: none;">
                     <h1 class = "Groupify" style="margin-left:2vw;background-color:#222222;border-radius:20px 0px 20px 0px;transform:rotate(5deg);padding:4px;width:25vw;">
                         <span class="titleText" >G</span>
