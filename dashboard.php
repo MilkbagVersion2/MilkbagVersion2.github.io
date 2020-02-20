@@ -299,8 +299,8 @@ function myFunction() {
              function showPage() {
                document.getElementById("loader").style.opacity = "0";
                document.getElementById("loaderBack").style.opacity = "0";
-               document.getElementById("loader").style.height = "0";
-               document.getElementById("loaderBack").style.height = "0";
+               document.getElementById('loader').style.zIndex = -1;
+               document.getElementById('loaderBack').style.zIndex = -1;
              }
              </script>
 
