@@ -401,15 +401,12 @@ checkSession();
 
 
 
-
+                                try{
                                 $header = "From:Groupify \r\n";
                                 $message = $_POST['Message'];
-                                $retval = mail ($row->email,"Student Contact from $username",$message,$header);
-
-                                if( $retval == true ) {
-                                   echo "Message sent successfully...";
-                                }else {
-                                   echo "Message could not be sent...";
+                                mail ($row->email,"Student Contact from $username",$message,$header);
+                                }catch(Exception $e){
+                                echo $e;
                                 }
                        //echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
  }
