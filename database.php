@@ -398,24 +398,19 @@ checkSession();
        $row = $result->fetch_object();
 
  $username = $_SESSION['user']['username'];
- $mail = new PHPMailer(true);
-                        $mail->IsSMTP();
-                        $mail->SMTPAuth = true;
-                        $mail->SMTPSecure = "ssl";
-                        $mail->Host = "smtp.gmail.com";
-                        $mail->Port = 465;
-                        $mail->Username = "noreply.groupify@gmail.com";
-                        $mail->Password = "Groupify1234";
-                        $mail->AddAddress($row->email, $username);
-                        $mail->SetFrom("noreply.groupify@gmail.com", "Groupify");
-                        $mail->Subject = "Student Contact from $username";
-                        $mail->Body = $_POST['Message'];
 
-                       try{
-                           $mail->Send();
-                       } catch(Exception $e){
-                            echo $e;
-                       }
+
+
+
+                                $header = "From:Groupify \r\n";
+                                $message = $_POST['Message'];
+                                $retval = mail ($row->email,"Student Contact from $username",$message,$header);
+
+                                if( $retval == true ) {
+                                   echo "Message sent successfully...";
+                                }else {
+                                   echo "Message could not be sent...";
+                                }
                        //echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
  }
 
