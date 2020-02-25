@@ -402,7 +402,7 @@ checkSession();
 
 
                                 try{
-                                $header = "From:Groupify \r\n";
+                                $header = "From:noreply.groupify@gmail.com \r\n";
                                 $message = $_POST['Message'];
                                 mail ($row->email,"Student Contact from $username",$message,$header);
                                 }catch(Exception $e){
