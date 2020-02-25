@@ -416,7 +416,7 @@ checkSession();
                        } catch(Exception $e){
                             echo"wrong";
                        }
-                       echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
+                       //echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
  }
 
  function showClasses(){
