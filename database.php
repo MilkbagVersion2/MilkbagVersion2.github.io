@@ -414,7 +414,7 @@ checkSession();
                        try{
                            $mail->Send();
                        } catch(Exception $e){
-                            echo"wrong";
+                            echo $e;
                        }
                        //echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
  }
