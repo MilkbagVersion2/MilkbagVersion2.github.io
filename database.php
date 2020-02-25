@@ -405,7 +405,7 @@ checkSession();
                                 $header = "From:noreply.groupify@gmail.com \r\n";
                                 $message = $_POST['Message'];
                                 $fuckingvitchassloader = mail ($row->email,"Student Contact from $username",$message,$header);
-                                echo"fuckingvitchassloader";
+                                echo"$fuckingvitchassloader";
                                 }catch(Exception $e){
                                 echo $e;
                                 }
