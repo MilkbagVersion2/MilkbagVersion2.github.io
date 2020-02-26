@@ -402,10 +402,10 @@ checkSession();
                         $mail->IsSMTP();
                         $mail->SMTPAuth = true;
                         $mail->SMTPSecure = "ssl";
-                        $mail->Host = "smtp.live.com";
+                        $mail->Host = "smtp.gmail.com";
                         $mail->Port = 465;
-                        $mail->Username = "joshwells@hotmail.ca";
-                        $mail->Password = "Joshua010";
+                        $mail->Username = "noreply.groupify@gmail.com";
+                        $mail->Password = "Groupify1234";
                         $mail->AddAddress($row->email, $username);
                         $mail->SetFrom("noreply.groupify@gmail.com", "Groupify");
                         $mail->Subject = "Student Contact from $username";
@@ -414,9 +414,9 @@ checkSession();
                        try{
                            $mail->Send();
                        } catch(Exception $e){
-                            echo $e;
+                            echo"wrong";
                        }
-                       //echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
+                       echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
  }
 
  function showClasses(){

@@ -179,7 +179,7 @@ body{
       </div>
      <br>
         <p style="font-size:12px;color:red;"><?php $error="";if(isset($_POST['CreateClass']) && $_POST['CreateClass'] == ''){addClassroom(); } ?></p>
-          <button  id = "changePassword" class="submit"  name="CreateClass" >Create</button>
+          <button  id = "CreateClass" class="submit"  name="CreateClass" >Create</button>
     <br>
     <br>
 

@@ -18,7 +18,6 @@ checkSignin();
 
 <link rel="stylesheet" type="text/css" href="index.css">
 <script src="WebTool.js"></script>
-<script src="jquery.js?2"></script>
 <meta name="theme-color" content="#000000">
 </head>
 
