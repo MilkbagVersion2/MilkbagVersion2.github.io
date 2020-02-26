@@ -398,17 +398,24 @@ checkSession();
        $row = $result->fetch_object();
 
  $username = $_SESSION['user']['username'];
+ $mail = new PHPMailer(true);
+                        $mail->IsSMTP();
+                        $mail->SMTPAuth = true;
+                        $mail->SMTPSecure = "ssl";
+                        $mail->Host = "smtp.gmail.com";
+                        $mail->Port = 465;
+                        $mail->Username = "noreply.groupify@gmail.com";
+                        $mail->Password = "Groupify1234";
+                        $mail->AddAddress($row->email, $username);
+                        $mail->SetFrom("noreply.groupify@gmail.com", "Groupify");
+                        $mail->Subject = "Student Contact from $username";
+                        $mail->Body = $_POST['Message'];
 
-
-
-                                try{
-                                $header = "From:noreply.groupify@gmail.com \r\n";
-                                $message = $_POST['Message'];
-                                $fuckingvitchassloader = mail ($row->email,"Student Contact from $username",$message,$header);
-                                echo"$fuckingvitchassloader";
-                                }catch(Exception $e){
-                                echo $e;
-                                }
+                       try{
+                           $mail->Send();
+                       } catch(Exception $e){
+                            echo $e;
+                       }
                        //echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php'</script>";
  }
 
