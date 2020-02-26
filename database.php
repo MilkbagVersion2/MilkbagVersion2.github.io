@@ -290,7 +290,7 @@ require 'PHPMailer/src/SMTP.php';
       $mysqli = new mysqli($servername, $username, $password, $database);
       echo"conntectoro";
 
-      $codeSearch = "SELECT * FROM classroom WHERE `classCode` LIKE ?";
+      $codeSearch = "SELECT * FROM class WHERE `classCode` LIKE ?";
       $stmt = $mysqli->prepare($codeSearch);
                  $stmt->bind_param('s', $classCode);
                  $stmt->execute();
