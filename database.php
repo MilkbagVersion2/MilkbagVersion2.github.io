@@ -298,9 +298,10 @@ require 'PHPMailer/src/SMTP.php';
       //All $_POST variables are grabbing the values from HTML text boxes    \\
       //=====================================================================\\
       if($className ===''){
+      echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
       }else{
               $upload = "INSERT INTO class (ClassName,userid,classCode,Teacher) VALUES ('$className','$idUser','$classCode',1)";
-echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
+
               if ($mysqli->query($upload) === TRUE) {
                 echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
               }
