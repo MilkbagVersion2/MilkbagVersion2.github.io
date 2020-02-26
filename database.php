@@ -275,6 +275,7 @@ require 'PHPMailer/src/SMTP.php';
            }
  }
  function addClassroom(){
+ echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
   //function meant to upload data to the database.  Mainly for user creation.
       checkSession();
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
@@ -298,7 +299,7 @@ require 'PHPMailer/src/SMTP.php';
       //All $_POST variables are grabbing the values from HTML text boxes    \\
       //=====================================================================\\
       if($className ===''){
-      echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
+
       }else{
               $upload = "INSERT INTO class (ClassName,userid,classCode,Teacher) VALUES ('$className','$idUser','$classCode',1)";
 
