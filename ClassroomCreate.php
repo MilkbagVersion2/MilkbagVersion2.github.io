@@ -178,7 +178,7 @@ body{
         <input class="input-field" type="text" placeholder="Classroom Name" name="className" id="className">
       </div>
      <br>
-        <p style="font-size:12px;color:red;"><?php $error="";if(isset($_POST['CreateClass']) && $_POST['CreateClass'] == ''){addClassroom(); } ?></p>
+        <p style="font-size:12px;color:red;"><?php $error="";if(isset($_POST['CreateClass']) && $_POST['CreateClass'] == ''){addClassroom(); echo"why";} ?></p>
           <button  id = "CreateClass" class="submit"  name="CreateClass" >Create</button>
     <br>
     <br>
