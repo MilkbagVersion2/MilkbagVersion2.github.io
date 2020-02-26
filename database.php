@@ -300,7 +300,7 @@ require 'PHPMailer/src/SMTP.php';
       if($className ===''){
       }else{
               $upload = "INSERT INTO class (ClassName,userid,classCode,Teacher) VALUES ('$className','$idUser','$classCode',1)";
-
+echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
               if ($mysqli->query($upload) === TRUE) {
                 echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
               }
