@@ -275,9 +275,10 @@ require 'PHPMailer/src/SMTP.php';
            }
  }
  function addClassroom(){
- echo"<script>window.location.href='https://group-ify.herokuapp.com/dashboard.php';</script>";
+
   //function meant to upload data to the database.  Mainly for user creation.
       checkSession();
+
  $servername = "us-cdbr-iron-east-04.cleardb.net";  //declaring a placeholder for the database server name.
  $username = "b68081f3e213ce";    //declaring a placeholder for the database username sign in.
  $password = "b155c581";         //declaring a placeholder for the database password sign in.
@@ -287,20 +288,25 @@ require 'PHPMailer/src/SMTP.php';
       $classCode = rand(10000,99999);
 
       $mysqli = new mysqli($servername, $username, $password, $database);
+      echo"conntectoro";
       $codeSearch = "SELECT * FROM classroom WHERE `classCode` LIKE '%{$classCode}%'";
+      echo"query";
        $searchresult = $mysqli->query($codeSearch);
        $row = $searchresult->fetch_assoc();
+       echo"beforewhile";
       while(!$row['username']==null){
         $classCode = rand(10000,99999);
         $searchresult = $mysqli->query($codeSearch);
         $row = $searchresult->fetch_assoc();
+        echo"while";
       }
       //=====================================================================\\
       //All $_POST variables are grabbing the values from HTML text boxes    \\
       //=====================================================================\\
       if($className ===''){
-
+		echo"if";
       }else{
+      echo"else";
               $upload = "INSERT INTO class (ClassName,userid,classCode,Teacher) VALUES ('$className','$idUser','$classCode',1)";
 
               if ($mysqli->query($upload) === TRUE) {
@@ -523,10 +529,10 @@ checkSession();
  }
  function checkSession(){
              if (session_status() == PHP_SESSION_ACTIVE) {
-                    }
-                    else{
-                    session_start();
-                    }
+             }
+             else{
+             session_start();
+             }
 
            }
  function checkSignin(){
