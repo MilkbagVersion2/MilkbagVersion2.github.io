@@ -289,10 +289,14 @@ require 'PHPMailer/src/SMTP.php';
 
       $mysqli = new mysqli($servername, $username, $password, $database);
       echo"conntectoro";
-      $codeSearch = "SELECT * FROM classroom WHERE `classCode` LIKE '%{$classCode}%'";
+
+      $codeSearch = "SELECT * FROM classroom WHERE `classCode` LIKE ?";
+      $stmt = $mysqli->prepare($sql);
+                 $stmt->bind_param('s', $classCode);
+                 $stmt->execute();
+                 $result = $stmt->get_result();
       echo"query";
-       $searchresult = $mysqli->query($codeSearch);
-       $row = $searchresult->fetch_assoc();
+       $row = $result->fetch_object();
        echo"beforewhile";
       while(!$row['username']==null){
         $classCode = rand(10000,99999);
