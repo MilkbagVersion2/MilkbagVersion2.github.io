@@ -291,7 +291,7 @@ require 'PHPMailer/src/SMTP.php';
       echo"conntectoro";
 
       $codeSearch = "SELECT * FROM classroom WHERE `classCode` LIKE ?";
-      $stmt = $mysqli->prepare($sql);
+      $stmt = $mysqli->prepare($codeSearch);
                  $stmt->bind_param('s', $classCode);
                  $stmt->execute();
                  $result = $stmt->get_result();
@@ -300,8 +300,9 @@ require 'PHPMailer/src/SMTP.php';
        echo"beforewhile";
       while(!$row['username']==null){
         $classCode = rand(10000,99999);
-        $searchresult = $mysqli->query($codeSearch);
-        $row = $searchresult->fetch_assoc();
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $searchresult->fetch_object();
         echo"while";
       }
       //=====================================================================\\
